@@ -1,0 +1,19 @@
+sales:
+  series:
+    sales: Sales
+    products: Products
+    aggregates: Aggregates
+  features:
+    sales:
+      orderId: "Order #"
+      sessionId: "Session #"
+      date: Date
+      numberOfSubjects: "Number of subjects"
+      subtotal: Subtotal
+      shipping: Shipping
+      promoRebate: "Promo rebate"
+      taxes: Taxes
+      returns: Returns
+      returnFees: "Return fees"
+      total: Total
+      products: Products

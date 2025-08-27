@@ -1,0 +1,53 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "psql_admin",
+    "password": "password",
+    "database": "pictaccio",
+    "schema": "public",
+    "synchronize": false,
+    "logging": false,
+    "entities": [
+      "src/database/models/*.ts"
+    ],
+    "subscribers": [
+      "src/database/subscribers/*.ts"
+    ],
+    "migrations": [
+      "src/database/migrations/*.ts"
+    ],
+    "cli": {
+      "entitiesDir": "src/database/models",
+      "migrationsDir": "src/database/migrations",
+      "subscribersDir": "src/database/subscribers"
+    }
+  },
+  {
+    "name": "legacy_import",
+    "type": "mysql",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "username": "photosf_user",
+    "password": "password",
+    "database": "qa2",
+    "synchronize": false,
+    "logging": false,
+    "entities": [
+      "src/database/models/*.ts"
+    ],
+    "subscribers": [
+      "src/database/subscribers/*.ts"
+    ],
+    "migrations": [
+      "src/database/migrations/*.ts"
+    ],
+    "cli": {
+      "entitiesDir": "src/database/models",
+      "migrationsDir": "src/database/migrations",
+      "subscribersDir": "src/database/subscribers"
+    }
+  }
+]

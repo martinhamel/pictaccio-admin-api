@@ -1,0 +1,10 @@
+<view-model attach="docs-secondary-navigation-viewmodel">
+    <nav id="docs-secondary-navigation">
+        <h3>{{t "docs-navigation:inThisArticle"}}</h3>
+        <ul>
+            <li #each="item in _navContent">
+                <a :href="item.link" #bind.text="item.content"></a>
+            </li>
+        </ul>
+    </nav> 
+</view-model>

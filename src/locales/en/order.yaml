@@ -1,0 +1,14 @@
+contactHeaders:
+  id: ID
+  firstName: First Name
+  lastName: Last Name
+  email: Email
+  phone: Phone
+  streetAddress1: Street Address 1
+  streetAddress2: Street Address 2
+  city: City
+  province: Province
+  state: State
+  region: Region
+  postalCode: Postal Code
+  newsletter: Newsletter

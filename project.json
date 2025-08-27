@@ -1,0 +1,143 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "name": "admin-api",
+    "sourceRoot": "app/admin-api/src",
+    "projectType": "application",
+
+    "targets": {
+        "compile": {
+            "dependsOn": [
+                {
+                    "projects": ["typescript-transform-path-rewrite", "grpc-service-contracts", "loufairy-server", "loufairy", "shared"],
+                    "target": "build"
+                }
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "nx run admin-api:build",
+                    "nx run admin-api:post-build"
+                ],
+                "parallel": false
+            },
+            "configurations": {
+                "production": {
+                    "commands": [
+                        "nx run admin-api:build --configuration=production",
+                        "nx run admin-api:post-build --configuration=production"
+                    ]
+                }
+            }
+        },
+
+        "serve:backend": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "serve:backend"
+            }
+        },
+
+        "stop:backend": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "stop:backend"
+            }
+        },
+
+        "build": {
+            "dependsOn": [
+                {
+                    "projects": ["typescript-transform-path-rewrite", "grpc-service-contracts", "loufairy-server", "loufairy", "shared"],
+                    "target": "build"
+                }
+            ],
+            "executor": "@nx/js:tsc",
+            "options": {
+                "main": "{projectRoot}/src/entry.ts",
+                "outputPath": "{workspaceRoot}/dist/app/admin-api",
+                "tsConfig": "{projectRoot}/tsconfig.json",
+                "clean": false
+            },
+            "configurations": {
+                "production": {
+                    "outputPath": "{workspaceRoot}/../app/app/admin-api"
+                }
+            }
+        },
+
+        "post-build": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "post-compile"
+            },
+            "configurations": {
+                "production": {
+                    "script": "post-compile-prod"
+                }
+            }
+        },
+
+        "lint": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "lint"
+            }
+        },
+
+        "test": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "test"
+            }
+        },
+
+        "docker-build-alpha": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "build:docker:alpha"
+            }
+        },
+
+        "docker-build-beta": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "build:docker:beta"
+            }
+        },
+
+        "docker-build-prod": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "build:docker:prod"
+            }
+        },
+
+        "docker-build-winter24": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "build:docker:winter24"
+            }
+        },
+
+        "docker-build-test": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "build:docker:test"
+            }
+        },
+
+        "fake-it": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "fake-it"
+            }
+        },
+
+        "clean": {
+            "executor": "nx:run-script",
+            "options": {
+                "script": "clean"
+            }
+        }
+    }
+}

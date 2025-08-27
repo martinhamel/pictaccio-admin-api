@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta powered-by="Pictaccio">
+    <title>{{__head_title__}}</title>
+</head>
+<body>
+<table width="100%"
+       cellspacing="0"
+       cellpadding="0"
+       style="border-collapse: collapse; width: 100%; background-color: {{ _cssContext.background1 }}">
+    <tr align="center"
+        style="text-align: center;">
+        <td width="80%"
+            style="width: 80%;">
+            <table>
+                {{#unless hideHeader }}
+                <tr>
+                    <td>{{> mails/header }}</td>
+                </tr>
+                {{/unless}}
+                <tr>
+                    <td style="background-color: {{ _cssContext.background2 }};
+                            border-radius: {{ _cssContext.borderRadius }}; box-shadow: {{ _cssContext.boxShadow }};
+                            padding: 15px 15px 25px">
+                        {{{ body }}}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 25px">{{> mails/footer }}</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

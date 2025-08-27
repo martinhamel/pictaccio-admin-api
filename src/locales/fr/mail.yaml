@@ -1,0 +1,31 @@
+inviteUser:
+  subject: Vous avez été invité à rejoindre {{ store }}
+  header: '{{ inviter }} vous a invité à rejoindre {{ store }}'
+  body:
+    invitationExpirationWarning: Ce lien d'invitation expirera dans {{ expirationDelayInH }} heures.
+    invitationMisfireWarning: Si vous pensez que cette invitation ne vous était pas destinée, veuillez l'ignorer.
+    linkMessage: Cliquez <a href="{{ link }}">ici</a> pour compléter votre invitation et créer votre compte.
+  footer:
+    reasonOrUnsubscribe: Vous recevez ce message car un administrateur de {{ store }} vous a envoyé une invitation.
+
+resetPassword:
+  subject: Réinitialisez votre {{ store }} mot de passe
+  header: Réinitialisation du mot de passe
+  body:
+    resetMisfireWarning: Si vous n'avez pas initialisé cette réinitialisation de mot de passe et avez reçu cet e-mail, veuillez nous contacter afin que nous puissions résoudre ce problème.
+    resetPasswordPresentation: Voici votre code de réinitialisation du mot de passe
+  footer:
+    reasonOrUnsubscribe: Vous recevez ce message car une demande provenant de {{ store }} a été déclenchée.
+
+orderPublishCustomerNotification:
+  subject: Vos photos sont disponibles pour téléchargement
+  header: Vos photos sont disponibles pour téléchargement
+  body:
+    description: Vos photos sont maintenant disponibles pour téléchargement. Cliquez sur le lien ci-dessous pour y accéder.
+    clickHere: Cliquez ici!
+  footer:
+    reasonOrUnsubscribe: Vous recevez ce message car vous avez des photos disponible sur {{store}}.
+
+common:
+  footer:
+    poweredBy: Propulsé par Pictaccio

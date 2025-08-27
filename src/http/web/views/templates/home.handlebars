@@ -1,0 +1,24 @@
+{{> layouts/header }}
+{{> sections/hero }}
+<main id="home">
+    {{#> layouts/twoCols col-1-w="66%" col-2-w="34%" }}
+        {{#*inline "col-1" }}
+            <iframe width="100%" height="100%"
+                    src="https://www.youtube.com/embed/aoAiIJZ6s-Y"
+                    title="Best Beginner Camera - 2023 - What you need to know"
+                    frameborder="0"
+                    allow="clipboard-write; encrypted-media"
+                    allowfullscreen>
+            </iframe>
+        {{/inline }}
+        {{#*inline "col-2" }}
+            <h4 class="h3">How is Pictaccio</h4>
+            <p>Every photographer needs a good team behind them to get the work done. Pictaccio is a responsible and sophisticated butler, serving our users loyally. Organized, trustworthy and respectful are only a few of his qualities. Guaranteeing our users satisfaction through each step with his high-grade service. From organizing photography sessions to sending their final images to the client, Pictaccio will accompany you through it all, making your work so much more efficient and enjoyable. let Pictaccio offer his aid through your photography journey.</p>
+            <p>Let us be of service,</p>
+            <p>It truly is our pleasure.</p>
+        {{/inline }}
+    {{/layouts/twoCols }}
+    {{> sections/functionalityOverview }}
+    {{> sections/aboutUs }}
+</main>
+{{> layouts/footer }}

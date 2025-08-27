@@ -1,0 +1,48 @@
+<view-model attach="request-quote-viewmodel">
+    <section id="request-quote">
+        <div class="request-arrow-box">
+            <h1 class="h3">Let's start the process!</h1>
+            <span>Here are a few questions for you.</span>
+            <div class="arrow-point">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 243 280.59">
+                    <polygon points="243 140.3 0 0 0 280.59 243 140.3"/>
+                </svg>
+            </div>
+        </div>
+        {{#> components/form class="request" columns="1.3fr 1fr" }}
+            {{#*inline "components/inputs" }}
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="request-first-name">
+                </label>
+                <label>
+                    <span>Last Name</span>
+                    <input type="text" name="request-last-name">
+                </label>
+                <label>
+                    <span>Company Name</span>
+                    <input type="text" name="request-company-name">
+                </label>
+                <label>
+                    <span>Phone Number</span>
+                    <input type="text" name="request-phone-number">
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="text" name="request-email">
+                </label>
+                <label class="textarea">
+                    <span>Message</span>
+                    <textarea name="request-message"></textarea>
+                </label>
+            {{/inline }}
+        {{/components/form }}
+        <div>
+            <h2 class="h4">Why we do this</h2>
+            <p>Why do we do this instead of just plain paying for the product on its own.</p>
+        </div>
+        <div class="form-complete">
+            <button class="btn btn-primary" @click="sendClick">Send your request</button>
+        </div>
+    </section>
+</view-model>

@@ -1,0 +1,32 @@
+<view-model attach="contact-us-section-viewmodel">
+    <section id="contact-us-section">
+        <h2 class="h3">Contact us</h2>
+        <div class="container">
+            {{#> components/form class="contacts-info" columns="1fr 1fr" }}
+                {{#*inline "components/inputs" }}
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="contact-name">
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="text" name="contact-email">
+                    </label>
+                    <label>
+                        <span>Subject</span>
+                        <input type="text" name="contact-subject">
+                    </label>
+                    <label>
+                        <span>Company Name</span>
+                        <input type="text" name="contact-company-name">
+                    </label>
+                    <label class="textarea no-max">
+                        <span>Message</span>
+                        <textarea name="request-message"></textarea>
+                    </label>
+                {{/inline }}
+            {{/components/form }}
+            <button class="btn btn-primary push-left" @click="sendClick">Send</button>
+        </div>
+    </section>
+</view-model>

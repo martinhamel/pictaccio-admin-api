@@ -1,0 +1,23 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: aks-smb
+provisioner: file.csi.azure.com
+allowVolumeExpansion: true
+parameters:
+  resourceGroup: Core-Infra
+  storageAccount: {{ !-! TODO: WITH YOUR STORAGE ACCOUNT -! }}
+  server: {{ !-! TODO: WITH YOUR STORAGE ACCOUNT DOMAIN -! }}
+  shareName: aks
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=19999
+  - gid=19999
+  - mfsymlinks
+  - cache=strict  # https://linux.die.net/man/8/mount.cifs
+  - nosharesock  # reduce probability of reconnect race
+  - actimeo=30  # reduce latency for metadata-heavy workload

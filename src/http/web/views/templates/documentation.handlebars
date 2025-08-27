@@ -1,0 +1,9 @@
+{{> layouts/header }}
+<div id="documentation-page">
+    {{> layouts/docsNavigation }}
+    <main>
+        {{{mdToHtml mdDoc }}}
+    </main>
+    {{> layouts/docsSecondaryNavigation }}
+</div>
+{{> layouts/footer }}

@@ -1,0 +1,43 @@
+<view-model id="test-page" attach="test-viewmodel">
+    <h1>Some title</h1>
+    <div style=" font-size: 3rem;">
+        {{t "cancel"}}
+        {{t "interpol" patate="pomme" }}
+    </div>
+    <div>
+        <a href="/render-test" class="{{currentUrlClass "/render-test" "current" }}">Render Test</a>
+    </div>
+    <span style=" font-size: 3rem;">{{ test }}</span>
+    <button @click="this.patate">Func ref</button>
+    <button @click="this.patate('pomme')">Complex</button>
+    <button @click="_button_click">Test</button>
+    <span #bind.text="testCounter"></span>
+    <input type="text" :value="testCounter">
+    <br>
+    <div #show="odd" style="width: 100px; height: 100px; background-color: indianred; display: inline-block">
+
+    </div>
+    <div #if="even" style="width: 100px; height: 100px; background-color: cadetblue; display: inline-block">
+
+    </div>
+    <br>
+
+    <ul style="display: inline-block; font-size: 3rem;">
+        <li #each="item in vegetables"><span #bind.text="item.name"></span></li>
+    </ul>
+
+    <ul style="display: inline-block; margin-left: 25rem; font-size: 3rem;">
+        <li #each="[index, item] in vegetables">
+            Index: <span #bind.text="index"></span>
+            Name: <span #bind.text="item.name"></span>
+        </li>
+    </ul>
+
+    <div>
+        <li #each="item in vegetables"><span #bind.text="item.name"></span></li>
+        <li #each="[index, item] in vegetables">
+            Index: <span #bind.text="index"></span>
+            Name: <span #bind.text="item.name"></span>
+        </li>
+    </div>
+</view-model>

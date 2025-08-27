@@ -1,0 +1,4 @@
+missingProductThemeImages:
+  title: Image Association Alert
+  message: Some products are missing one or more image associated with a theme and need your attention
+  linkText: View affected products

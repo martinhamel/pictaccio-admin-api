@@ -1,0 +1,31 @@
+<view-model attach="faq-section-viewmodel">
+    <section id="faq-section">
+        <h2 class="h3">Frequently ask questions</h2>
+        <div class="container">
+            <div class="faq-navigation-container">
+                {{> components/searchBar }}
+                <ul class="faq-nav">
+                    <li>
+                        <h3 class="h5">General</h3>
+                        <ul class="faq-sub-nav">
+                            <li>Payment</li>
+                            <li>Account</li>
+                            <li>Roles</li>
+                            <li>Procedures</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="faq-details-container">
+                <details>
+                    <summary class="h4">
+                        What is this?
+                    </summary>
+                    <blockquote>
+                        This is That
+                    </blockquote>
+                </details>
+            </div>
+        </div>
+    </section>
+</view-model>

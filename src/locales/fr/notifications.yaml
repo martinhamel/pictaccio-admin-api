@@ -1,0 +1,4 @@
+missingProductThemeImages:
+  title: Alerte d'association d'images
+  message: Certains produits manquent une ou plusieurs images associées à un thème et nécessitent votre attention
+  linkText: Voir les produits affectés

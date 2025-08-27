@@ -1,0 +1,31 @@
+inviteUser:
+  subject: You have been invited to {{ store }}
+  header: '{{ inviter }} has invited you to join {{ store }}'
+  body:
+    invitationExpirationWarning: This invitation link will expire in {{ expirationDelayInH }} hours.
+    invitationMisfireWarning: If you think this invitation was not meant for you, please ignore.
+    linkMessage: Click <a href="{{ link }}">here</a> to complete your invitation and create your account.
+  footer:
+    reasonOrUnsubscribe: You are receiving this message because an administrator of {{ store }} sent you an invitation.
+
+resetPassword:
+  subject: Reset Your {{ store }} Password
+  header: Password Reset
+  body:
+    resetMisfireWarning: If you did not initiate this password reset and have received this email, please contact us so we can resolve this issue.
+    resetPasswordPresentation: Here is your reset password code
+  footer:
+    reasonOrUnsubscribe: You are receiving this message because a request to do so has been trigger from {{ store }}.
+
+orderPublishCustomerNotification:
+  subject: Your photos are available for download
+  header: Your photos are available for download
+  body:
+    description: Your photos are now available for download. Click the link below to access them.
+    clickHere: Click here!
+  footer:
+    reasonOrUnsubscribe: You are receiving this message because you have photos available from {{ store }}.
+
+common:
+  footer:
+    poweredBy: Powered by Pictaccio
