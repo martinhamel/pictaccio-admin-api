@@ -1,4 +1,4 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { ConfigSchema } from '../../core/config_schema';
 import moment from 'moment';
 import { Container } from 'typedi';
 import { BaseEntity, Column, CreateDateColumn, Entity, LessThan, PrimaryGeneratedColumn } from 'typeorm';

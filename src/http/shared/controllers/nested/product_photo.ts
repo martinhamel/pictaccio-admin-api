@@ -1,4 +1,4 @@
-import { IsString, IsUrl } from '@loufa/class-validator';
+import { IsString, IsUrl } from 'class-validator';
 
 export class ProductPhoto {
     @IsString()

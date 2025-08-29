@@ -5,11 +5,11 @@ import {
     IsNumberString,
     Matches,
     ValidateNested
-} from '@loufa/class-validator';
-import { SessionOptions } from '@pictaccio/admin-api/http/shared/controllers/requests/session_options';
-import { SubjectInfo } from '@pictaccio/admin-api/http/shared/controllers/nested/subject_info';
-import { SubjectInfoMappings } from '@pictaccio/admin-api/http/shared/controllers/nested/subject_info_mappings';
-import { IsNullable } from '@pictaccio/admin-api/http/shared/validators/is_nullable';
+} from 'class-validator';
+import { SessionOptions } from '../../../../http/shared/controllers/requests/session_options';
+import { SubjectInfo } from '../../../../http/shared/controllers/nested/subject_info';
+import { SubjectInfoMappings } from '../../../../http/shared/controllers/nested/subject_info_mappings';
+import { IsNullable } from '../../../../http/shared/validators/is_nullable';
 import { Transform } from 'class-transformer';
 
 export class CreateSessionRequest {

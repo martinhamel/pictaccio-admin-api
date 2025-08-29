@@ -1,31 +1,31 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { TransactionalBackground } from '@pictaccio/admin-api/database/entities/transactional_background';
-import { TransactionalProductCrosssell } from '@pictaccio/admin-api/database/entities/transactional_product_crosssell';
-import { TransactionalProductThemeSet } from '@pictaccio/admin-api/database/entities/transactional_product_theme_set';
-import { findTags, tagObjects, untagObjects } from '@pictaccio/admin-api/database/helpers/object_tags';
-import { TagObjectRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/tag_object_request';
-import { ReadTagsResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/read_tags_response';
-import { TagObjectResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/tag_object_response';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { TransactionalBackground } from '../../../database/entities/transactional_background';
+import { TransactionalProductCrosssell } from '../../../database/entities/transactional_product_crosssell';
+import { TransactionalProductThemeSet } from '../../../database/entities/transactional_product_theme_set';
+import { findTags, tagObjects, untagObjects } from '../../../database/helpers/object_tags';
+import { TagObjectRequest } from '../../../http/shared/controllers/requests/tag_object_request';
+import { ReadTagsResponse } from '../../../http/shared/controllers/responses/read_tags_response';
+import { TagObjectResponse } from '../../../http/shared/controllers/responses/tag_object_response';
 import { Service } from 'typedi';
 import { Authorized, Body, JsonController, Post, Req } from '@loufa/routing-controllers';
-import { Request } from '@pictaccio/admin-api/types/request';
+import { Request } from '../../../types/request';
 import {
     DataTable,
     fromCreateRequest,
     fromDeleteRequest,
     fromReadRequest,
     fromUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { TransactionalProductCustomTemplate } from '@pictaccio/admin-api/database/entities/transactional_product_custom_template';
-import { TransactionalProductCategory } from '@pictaccio/admin-api/database/entities/transactional_product_category';
-import { TransactionalProductCatalog } from '@pictaccio/admin-api/database/entities/transactional_product_catalog';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
-import { DataTableCreateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
-import { DataTableDeleteBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
-import { DataTableReadBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
-import { DataTableUpdateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { DataTableBaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/data_table_base_response';
+} from '../../../database/helpers/data_table';
+import { TransactionalProductCustomTemplate } from '../../../database/entities/transactional_product_custom_template';
+import { TransactionalProductCategory } from '../../../database/entities/transactional_product_category';
+import { TransactionalProductCatalog } from '../../../database/entities/transactional_product_catalog';
+import { TransactionalProduct } from '../../../database/entities/transactional_product';
+import { DataTableCreateBaseRequest } from '../../../http/shared/controllers/requests/data_table_create_base_request';
+import { DataTableDeleteBaseRequest } from '../../../http/shared/controllers/requests/data_table_delete_base_request';
+import { DataTableReadBaseRequest } from '../../../http/shared/controllers/requests/data_table_read_base_request';
+import { DataTableUpdateBaseRequest } from '../../../http/shared/controllers/requests/data_table_update_base_request';
+import { DataTableBaseResponse } from '../../../http/shared/controllers/responses/data_table_base_response';
 
 @Service()
 @JsonController('/product')

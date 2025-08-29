@@ -1,4 +1,4 @@
-import { TransactionalProductCatalog } from '@pictaccio/admin-api/database/entities/transactional_product_catalog';
+import { TransactionalProductCatalog } from '../../database/entities/transactional_product_catalog';
 import { BaseEntity, Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'product_catalog_ranks', schema: 'transactional' })

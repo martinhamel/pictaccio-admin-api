@@ -1,7 +1,7 @@
 import { NextFunction, Response } from 'express';
 import { ExpressMiddlewareInterface, Middleware } from '@loufa/routing-controllers';
 import { Service } from 'typedi';
-import { Request } from '@pictaccio/admin-api/types/request';
+import { Request } from '../../../types/request';
 
 @Service()
 @Middleware({ type: 'before' })

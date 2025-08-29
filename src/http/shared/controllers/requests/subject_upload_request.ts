@@ -1,4 +1,4 @@
-import { IsAlpha, IsNumber, IsNumberString, ValidateNested } from '@loufa/class-validator';
+import { IsAlpha, IsNumber, IsNumberString, ValidateNested } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 class SubjectUploadData {

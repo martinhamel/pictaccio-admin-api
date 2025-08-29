@@ -1,4 +1,4 @@
-import { getMetadata } from '@pictaccio/admin-api/database/decorators/metadata';
+import { getMetadata } from '../../database/decorators/metadata';
 import { BaseEntity } from 'typeorm';
 
 export function AllowOnWire(target: any, propertyKey: string): void {

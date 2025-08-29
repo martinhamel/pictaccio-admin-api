@@ -2,10 +2,10 @@ import { load } from 'js-yaml';
 import i18next, { getFixedT as i18nextGetFixedT, TFunction } from 'i18next';
 import Backend from 'i18next-fs-backend';
 import { Container } from 'typedi';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { Language } from '@pictaccio/admin-api/types/language';
+import { LoaderInterface } from '../bootstrap';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
+import { Language } from '../types/language';
 
 const loaded: Language[] = [];
 

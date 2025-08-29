@@ -1,7 +1,7 @@
 import { isMainThread, threadId } from 'worker_threads';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap/loader_interface';
-import { LoaderState } from '@pictaccio/admin-api/bootstrap/loader_state';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { LoaderInterface } from '../bootstrap/loader_interface';
+import { LoaderState } from '../bootstrap/loader_state';
+import { logger } from '../core/logger';
 
 export const loaderState: LoaderState = new LoaderState();
 

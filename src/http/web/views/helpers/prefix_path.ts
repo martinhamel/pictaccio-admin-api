@@ -1,4 +1,4 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { ConfigSchema } from '../../../../core/config_schema';
 import { join } from 'path';
 import { Container } from 'typedi';
 

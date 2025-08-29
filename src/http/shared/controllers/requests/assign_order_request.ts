@@ -1,4 +1,4 @@
-import { IsNumberString, IsOptional, IsUUID } from '@loufa/class-validator';
+import { IsNumberString, IsOptional, IsUUID } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class AssignOrderRequest {

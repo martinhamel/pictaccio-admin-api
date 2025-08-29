@@ -1,6 +1,6 @@
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { TransactionProcessorResponse } from '@pictaccio/admin-api/types/transaction_processor_response';
-import { TransactionType } from '@pictaccio/admin-api/types/transaction_type';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
+import { TransactionProcessorResponse } from '../../types/transaction_processor_response';
+import { TransactionType } from '../../types/transaction_type';
 import {
     BaseEntity,
     Column,

@@ -1,6 +1,6 @@
 import { join } from 'node:path';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { formatPEMString, getApiServerVersion } from '@pictaccio/admin-api/core/utils';
+import { ConfigSchema } from './core/config_schema';
+import { formatPEMString, getApiServerVersion } from './core/utils';
 import * as process from 'process';
 
 const ROOT_DIR = process.env.ROOT_DIR ?? __dirname;

@@ -1,4 +1,4 @@
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
+import { LocalizedString } from './localized_string';
 
 export interface NotificationDescriptor {
     title: LocalizedString;

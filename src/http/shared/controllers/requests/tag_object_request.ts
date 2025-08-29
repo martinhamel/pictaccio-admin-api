@@ -1,5 +1,5 @@
-import { IsArray, IsNumberString, ValidateNested } from "@loufa/class-validator";
-import { Tag } from '@pictaccio/admin-api/http/shared/controllers/nested/tag';
+import { IsArray, IsNumberString, ValidateNested } from "class-validator";
+import { Tag } from '../../../../http/shared/controllers/nested/tag';
 import { Transform } from "class-transformer";
 
 export class TagObjectRequest {

@@ -1,4 +1,4 @@
-import { SLOT_URL } from '@pictaccio/admin-api/http/web/views/view';
+import { SLOT_URL } from '../../../../http/web/views/view';
 
 export default function currentUrlClass(url: string, className: string, options): string {
     const internalUrl = options.data.root.__internals__[SLOT_URL];

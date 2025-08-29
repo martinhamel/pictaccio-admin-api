@@ -1,4 +1,4 @@
-import { Language } from '@pictaccio/admin-api/types/language';
+import { Language } from './language';
 
 export type LocalizedString = {
     [Property in Language]?: string

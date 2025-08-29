@@ -1,17 +1,17 @@
 import { Authorized, Body, CurrentUser, Get, JsonController, Post, Req } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { AvatarReadResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/avatar_read_response';
+import { AvatarReadResponse } from '../../../http/shared/controllers/responses/avatar_read_response';
 import { Inject, Service } from 'typedi';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
-import { EditUserNameRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/edit_user_name_request';
-import { EditUserNameResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/edit_user_name_response';
-import { ReadUserNameResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/read_user_name_response';
-import { ReadUserSessionInfoResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/read_user_session_info_response';
-import { UploadAvatarResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/upload_avatar_response';
-import { UserInfoService } from '@pictaccio/admin-api/services/user_info_service';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { Request } from '../../../types/request';
+import { User } from '@pictaccio/shared/types/user';
+import { EditUserNameRequest } from '../../../http/shared/controllers/requests/edit_user_name_request';
+import { EditUserNameResponse } from '../../../http/shared/controllers/responses/edit_user_name_response';
+import { ReadUserNameResponse } from '../../../http/shared/controllers/responses/read_user_name_response';
+import { ReadUserSessionInfoResponse } from '../../../http/shared/controllers/responses/read_user_session_info_response';
+import { UploadAvatarResponse } from '../../../http/shared/controllers/responses/upload_avatar_response';
+import { UserInfoService } from '../../../services/user_info_service';
 
 @Service()
 @JsonController('/user-info')

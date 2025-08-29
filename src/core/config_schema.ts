@@ -1,4 +1,4 @@
-import { Language } from "@pictaccio/shared/src/types/language";
+import { Language } from "@pictaccio/shared/types/language";
 
 export interface ConfigSchema {
     env: {

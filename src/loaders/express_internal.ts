@@ -1,8 +1,8 @@
 import { Action, OwnershipChecker, useExpressServer } from '@loufa/routing-controllers';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap';
-import { Collection } from '@pictaccio/admin-api/core/collection';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { LoaderInterface } from '../bootstrap';
+import { Collection } from '../core/collection';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
 import express, { json } from 'express';
 // import { promises as fsPromises } from 'fs';
 import { createServer } from 'http';

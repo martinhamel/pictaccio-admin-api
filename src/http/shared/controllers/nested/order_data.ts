@@ -1,11 +1,11 @@
-import { IsNumber, IsString, ValidateNested } from '@loufa/class-validator';
-import { CartItem } from '@pictaccio/admin-api/http/shared/controllers/nested/cart_item';
-import { ContactInfo } from '@pictaccio/admin-api/http/shared/controllers/nested/contact_info';
-import { Shipping } from '@pictaccio/admin-api/http/shared/controllers/nested/shipping';
-import { Subject } from '@pictaccio/admin-api/http/shared/controllers/nested/subject';
-import { Transaction } from '@pictaccio/admin-api/http/shared/controllers/nested/transaction';
-import { PhotoSelections } from '@pictaccio/shared/src/types/photo_selections';
-import { PhotoVersionCollection } from '@pictaccio/shared/src/types/photo_version_collection';
+import { IsNumber, IsString, ValidateNested } from 'class-validator';
+import { CartItem } from '../../../../http/shared/controllers/nested/cart_item';
+import { ContactInfo } from '../../../../http/shared/controllers/nested/contact_info';
+import { Shipping } from '../../../../http/shared/controllers/nested/shipping';
+import { Subject } from '../../../../http/shared/controllers/nested/subject';
+import { Transaction } from '../../../../http/shared/controllers/nested/transaction';
+import { PhotoSelections } from '@pictaccio/shared/types/photo_selections';
+import { PhotoVersionCollection } from '@pictaccio/shared/types/photo_version_collection';
 
 export class OrderData {
     @IsNumber()

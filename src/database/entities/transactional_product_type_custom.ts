@@ -1,7 +1,7 @@
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
+import { TransactionalProduct } from '../../database/entities/transactional_product';
 import {
     TransactionalProductCustomTemplate
-} from '@pictaccio/admin-api/database/entities/transactional_product_custom_template';
+} from '../../database/entities/transactional_product_custom_template';
 import { BaseEntity, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, Relation } from 'typeorm';
 
 @Entity({ name: 'product_type_customs', schema: 'transactional' })

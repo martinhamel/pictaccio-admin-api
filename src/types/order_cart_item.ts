@@ -1,5 +1,5 @@
-import { LocalizedString } from '@pictaccio/shared/src/types/localized_string';
-import { ProductType } from '@pictaccio/shared/src/types/product_type';
+import { LocalizedString } from '@pictaccio/shared/types/localized_string';
+import { ProductType } from '@pictaccio/shared/types/product_type';
 
 export type OrderCartItem = {
     comment: string,

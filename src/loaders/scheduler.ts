@@ -2,9 +2,9 @@ import cron from 'node-cron';
 import path from 'path';
 import { Worker } from 'node:worker_threads';
 import { Container } from 'typedi';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { LoaderInterface } from '../bootstrap';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
 
 type WorkerThreadInfo = {
     jobCount: number;

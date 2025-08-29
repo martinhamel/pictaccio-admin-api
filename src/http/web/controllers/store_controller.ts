@@ -12,61 +12,61 @@ import {
     Res
 } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { config } from '@pictaccio/admin-api/config';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { PublicAppIntegration } from '@pictaccio/admin-api/database/entities/public_app_integration';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
+import { config } from '../../../config';
+import { ConfigSchema } from '../../../core/config_schema';
+import { FastStoreInterface } from '../../../core/fast_store_interface';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { PublicAppIntegration } from '../../../database/entities/public_app_integration';
+import { PublicStoreConfig } from '../../../database/entities/public_store_config';
 import {
     SetAppIntegrationRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/get_app_integration_request';
+} from '../../../http/shared/controllers/requests/get_app_integration_request';
 import {
     EmailAddress,
     SetStoreConfigRequest,
     TaxLocality
-} from '@pictaccio/admin-api/http/shared/controllers/requests/set_store_config_request';
+} from '../../../http/shared/controllers/requests/set_store_config_request';
 import {
     SetStoreLanguagesRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/set_store_languages_request';
+} from '../../../http/shared/controllers/requests/set_store_languages_request';
 import {
     SetStoreShutdownRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/set_store_shutdown_request';
-import { SetStoreUrls } from '@pictaccio/admin-api/http/shared/controllers/requests/set_store_urls';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
+} from '../../../http/shared/controllers/requests/set_store_shutdown_request';
+import { SetStoreUrls } from '../../../http/shared/controllers/requests/set_store_urls';
+import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
 import {
     GetAppIntegrationResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/get_app_integrations_response';
+} from '../../../http/shared/controllers/responses/get_app_integrations_response';
 import {
     GetAvailableLanguagesResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/get_available_languages_response';
-import { GetStoreShutdownResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/get_shutdown_response';
+} from '../../../http/shared/controllers/responses/get_available_languages_response';
+import { GetStoreShutdownResponse } from '../../../http/shared/controllers/responses/get_shutdown_response';
 import {
     GetStoreConfigResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/get_store_config_response';
+} from '../../../http/shared/controllers/responses/get_store_config_response';
 import {
     GetStoreLanguagesResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/get_store_languages_response';
+} from '../../../http/shared/controllers/responses/get_store_languages_response';
 import {
     GetStoreNotifyEmailsResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/get_store_notify_emails_response';
-import { GetStoreUrls } from '@pictaccio/admin-api/http/shared/controllers/responses/get_store_urls';
+} from '../../../http/shared/controllers/responses/get_store_notify_emails_response';
+import { GetStoreUrls } from '../../../http/shared/controllers/responses/get_store_urls';
 import {
     SetAppIntegrationResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/set_app_integration_response';
+} from '../../../http/shared/controllers/responses/set_app_integration_response';
 import {
     SetStoreConfigResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/set_store_config_response';
+} from '../../../http/shared/controllers/responses/set_store_config_response';
 import {
     StoreConfiguredResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/store_configured_response';
-import { PubsubService } from '@pictaccio/admin-api/services/pubsub_service';
-import StoreConfigService from '@pictaccio/admin-api/services/store_config_service';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { AppIntegrationCategories } from '@pictaccio/shared/src/types/app_integration_categories';
-import { User } from '@pictaccio/shared/src/types/user';
-import { AppIntegrationApp } from '@pictaccio/shared/src/types/app_integration_app';
+} from '../../../http/shared/controllers/responses/store_configured_response';
+import { PubsubService } from '../../../services/pubsub_service';
+import StoreConfigService from '../../../services/store_config_service';
+import { Request } from '../../../types/request';
+import { AppIntegrationCategories } from '@pictaccio/shared/types/app_integration_categories';
+import { User } from '@pictaccio/shared/types/user';
+import { AppIntegrationApp } from '@pictaccio/shared/types/app_integration_app';
 import { Response } from 'express';
 import { Inject, Service } from 'typedi';
 import { promisify } from 'util';

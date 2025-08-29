@@ -1,5 +1,5 @@
-import { IsString } from '@loufa/class-validator';
-import { UserName } from '@pictaccio/shared/src/types/user_name';
+import { IsString } from 'class-validator';
+import { UserName } from '@pictaccio/shared/types/user_name';
 
 export class EditUserNameRequest implements UserName {
     @IsString()

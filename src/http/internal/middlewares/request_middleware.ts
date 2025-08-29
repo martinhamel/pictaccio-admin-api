@@ -1,6 +1,6 @@
 import { ExpressMiddlewareInterface, Middleware } from '@loufa/routing-controllers';
-import { AsyncStoreService } from '@pictaccio/admin-api/services/async_store_service';
-import { Request } from '@pictaccio/admin-api/types/request';
+import { AsyncStoreService } from '../../../services/async_store_service';
+import { Request } from '../../../types/request';
 import { NextFunction, Response } from 'express';
 import { Inject, Service } from 'typedi';
 

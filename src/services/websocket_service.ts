@@ -1,12 +1,12 @@
-import { AsyncStoreService } from '@pictaccio/admin-api/services/async_store_service';
-import { AuthService } from '@pictaccio/admin-api/services/auth_service';
+import { AsyncStoreService } from '../services/async_store_service';
+import { AuthService } from '../services/auth_service';
 import { Server, Socket } from 'socket.io';
 import { Inject, Service } from 'typedi';
-import { PushNotificationToRoles } from '@pictaccio/admin-api/types/messages/push_notification_to_roles';
-import { PushNotificationToUser } from '@pictaccio/admin-api/types/messages/push_notification_to_user';
-import { NotificationDescriptor } from '@pictaccio/admin-api/types/notification_descriptor';
-import { User } from '@pictaccio/shared/src/types/user';
-import { UserSession } from '@pictaccio/admin-api/types/user_session';
+import { PushNotificationToRoles } from '../types/messages/push_notification_to_roles';
+import { PushNotificationToUser } from '../types/messages/push_notification_to_user';
+import { NotificationDescriptor } from '../types/notification_descriptor';
+import { User } from '@pictaccio/shared/types/user';
+import { UserSession } from '../types/user_session';
 
 type SocketItem = {
     socket: Socket,

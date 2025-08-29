@@ -1,5 +1,5 @@
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
-import NotificationService from '@pictaccio/admin-api/services/notification_service';
+import { FastStoreInterface } from '../core/fast_store_interface';
+import NotificationService from '../services/notification_service';
 import { Inject, Service } from 'typedi';
 
 @Service('jobs-comm-main')

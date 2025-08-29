@@ -1,5 +1,5 @@
-import { Request } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
+import { Request } from './request';
+import { User } from '@pictaccio/shared/types/user';
 
 export const AsyncStorageItemTypes = [
     'firstBoot',

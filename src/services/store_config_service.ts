@@ -1,15 +1,15 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { PublicAppIntegration } from '@pictaccio/admin-api/database/entities/public_app_integration';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
-import { AppIntegrationApp, AppIntegrationApps } from '@pictaccio/shared/src/types/app_integration_app';
-import { CssStyleDescription, CssStyleTransactional } from '@pictaccio/shared/src/types/css_color_descriptor';
-import { CustomExternalUrls } from '@pictaccio/shared/src/types/custom_external_urls';
-import { Language } from '@pictaccio/shared/src/types/language';
-import { SaleTaxes } from '@pictaccio/shared/src/types/sale_taxes';
-import { StoreLanguageItem } from '@pictaccio/shared/src/types/store_language_item';
-import { StoreConfigurationStatus } from '@pictaccio/shared/src/types/store_status';
-import { TaxLocality } from '@pictaccio/shared/src/types/tax_locality';
-import { getTaxesForLocality } from '@pictaccio/shared/src/utils/taxes';
+import { ConfigSchema } from '../core/config_schema';
+import { PublicAppIntegration } from '../database/entities/public_app_integration';
+import { PublicStoreConfig } from '../database/entities/public_store_config';
+import { AppIntegrationApp, AppIntegrationApps } from '@pictaccio/shared/types/app_integration_app';
+import { CssStyleDescription, CssStyleTransactional } from '@pictaccio/shared/types/css_color_descriptor';
+import { CustomExternalUrls } from '@pictaccio/shared/types/custom_external_urls';
+import { Language } from '@pictaccio/shared/types/language';
+import { SaleTaxes } from '@pictaccio/shared/types/sale_taxes';
+import { StoreLanguageItem } from '@pictaccio/shared/types/store_language_item';
+import { StoreConfigurationStatus } from '@pictaccio/shared/types/store_status';
+import { TaxLocality } from '@pictaccio/shared/types/tax_locality';
+import { getTaxesForLocality } from '@pictaccio/shared/utils/taxes';
 import { Inject, Service } from 'typedi';
 
 @Service('store-config')

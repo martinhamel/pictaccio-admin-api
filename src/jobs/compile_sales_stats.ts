@@ -1,13 +1,13 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { AdminSalesStat } from '@pictaccio/admin-api/database/entities/admin_sales_stat';
-import { AdminSalesStatsProduct } from '@pictaccio/admin-api/database/entities/admin_sales_stats_product';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { getAppStateQuery, setAppStateQuery } from '@pictaccio/admin-api/database/helpers/app_states';
-import { lock } from '@pictaccio/admin-api/database/helpers/locks';
-import { LockAcquireError } from '@pictaccio/admin-api/errors/lock_acquire_error';
-import { ProductType } from '@pictaccio/shared/src/types/product_type';
-import { calculateTaxes } from '@pictaccio/shared/src/utils/taxes';
+import { logger } from '../core/logger';
+import { appDataSource } from '../database/data_source';
+import { AdminSalesStat } from '../database/entities/admin_sales_stat';
+import { AdminSalesStatsProduct } from '../database/entities/admin_sales_stats_product';
+import { TransactionalOrder } from '../database/entities/transactional_order';
+import { getAppStateQuery, setAppStateQuery } from '../database/helpers/app_states';
+import { lock } from '../database/helpers/locks';
+import { LockAcquireError } from '../errors/lock_acquire_error';
+import { ProductType } from '@pictaccio/shared/types/product_type';
+import { calculateTaxes } from '@pictaccio/shared/utils/taxes';
 import { MoreThanOrEqual, QueryRunner } from 'typeorm';
 
 const MAX_BATCH_SIZE = 1000;

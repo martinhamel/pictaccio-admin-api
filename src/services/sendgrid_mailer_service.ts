@@ -1,7 +1,7 @@
 import { Container, Service } from 'typedi';
-import { MailerInterface, MailerItem } from '@pictaccio/admin-api/core/mailer_interface';
+import { MailerInterface, MailerItem } from '../core/mailer_interface';
 import sendgrid from '@sendgrid/mail';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { logger } from '../core/logger';
 
 const config = Container.get('config') as any;
 sendgrid.setApiKey(config.sendgrid.apikey);

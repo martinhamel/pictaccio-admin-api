@@ -1,5 +1,5 @@
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
+import { AdminUser } from '../../database/entities/admin_user';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
 import { BaseEntity, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'order_assignments', schema: 'admin' })

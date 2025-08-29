@@ -1,6 +1,6 @@
-import { ValidateNested } from '@loufa/class-validator';
-import { Tag } from '@pictaccio/admin-api/http/shared/controllers/nested/tag';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
+import { ValidateNested } from 'class-validator';
+import { Tag } from '../../../../http/shared/controllers/nested/tag';
+import { BaseResponse } from '../../../../http/shared/controllers/responses/base_response';
 
 export class TagObjectResponse extends BaseResponse {
     @ValidateNested({ each: true })

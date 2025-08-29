@@ -1,8 +1,8 @@
 import {
     AppIntegrationConfigurations,
     AppIntegrationConfigurationUnion
-} from '@pictaccio/shared/src/types/app_integration_configuration';
-import { AppIntegrationApp, AppIntegrationApps } from '@pictaccio/shared/src/types/app_integration_app';
+} from '@pictaccio/shared/types/app_integration_configuration';
+import { AppIntegrationApp, AppIntegrationApps } from '@pictaccio/shared/types/app_integration_app';
 import { BaseEntity, Column, Entity, Index, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'app_integrations', schema: 'public' })

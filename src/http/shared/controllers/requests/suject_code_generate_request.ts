@@ -1,4 +1,4 @@
-import { IsDefined, IsNumber } from '@loufa/class-validator';
+import { IsDefined, IsNumber } from 'class-validator';
 
 export class SubjectCodeGenerateRequest {
     @IsDefined()

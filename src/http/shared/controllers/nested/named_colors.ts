@@ -1,4 +1,4 @@
-import { IsHexColor } from '@loufa/class-validator';
+import { IsHexColor } from 'class-validator';
 
 export class NamedColors {
     @IsHexColor()

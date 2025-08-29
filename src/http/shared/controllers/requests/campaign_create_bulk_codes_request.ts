@@ -1,4 +1,4 @@
-import { IsNumber, IsNumberString } from '@loufa/class-validator';
+import { IsNumber, IsNumberString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class CampaignCreateBulkCodesRequest {

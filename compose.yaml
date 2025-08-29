@@ -1,10 +1,10 @@
 services:
-  app:
+  pictaccio-admin-api:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/app
+      - ./:/app:z
     ports:
       - "8000:8000"
     environment:

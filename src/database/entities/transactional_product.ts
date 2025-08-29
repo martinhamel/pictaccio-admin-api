@@ -1,19 +1,19 @@
 import { BadRequestError } from '@loufa/routing-controllers';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { AllowUploads } from '@pictaccio/admin-api/database/decorators/allow_uploads';
-import { AdminDanglingAsset } from '@pictaccio/admin-api/database/entities/admin_dangling_asset';
-import { AdminTag } from '@pictaccio/admin-api/database/entities/admin_tag';
-import { TransactionalProductCatalog } from '@pictaccio/admin-api/database/entities/transactional_product_catalog';
-import { TransactionalProductCategory } from '@pictaccio/admin-api/database/entities/transactional_product_category';
+import { ConfigSchema } from '../../core/config_schema';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { AllowUploads } from '../../database/decorators/allow_uploads';
+import { AdminDanglingAsset } from '../../database/entities/admin_dangling_asset';
+import { AdminTag } from '../../database/entities/admin_tag';
+import { TransactionalProductCatalog } from '../../database/entities/transactional_product_catalog';
+import { TransactionalProductCategory } from '../../database/entities/transactional_product_category';
 import {
     TransactionalProductCustomTemplate
-} from '@pictaccio/admin-api/database/entities/transactional_product_custom_template';
-import { TransactionalProductThemeSet } from '@pictaccio/admin-api/database/entities/transactional_product_theme_set';
+} from '../../database/entities/transactional_product_custom_template';
+import { TransactionalProductThemeSet } from '../../database/entities/transactional_product_theme_set';
 import {
     TransactionalProductTypeCustom
-} from '@pictaccio/admin-api/database/entities/transactional_product_type_custom';
-import { TransactionalProductTypeTheme } from '@pictaccio/admin-api/database/entities/transactional_product_type_theme';
+} from '../../database/entities/transactional_product_type_custom';
+import { TransactionalProductTypeTheme } from '../../database/entities/transactional_product_type_theme';
 import {
     DataTableCreateRequest,
     DataTableDeleteRequest,
@@ -21,21 +21,21 @@ import {
     DataTableOverrideResult,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
+} from '../../database/helpers/data_table';
 import {
     formatTags,
     queryObjectsByTag, queryObjectsByTags,
     queryTagObjects,
     queryTagsForObjects
-} from '@pictaccio/admin-api/database/helpers/object_tags';
-import { floatTransformer } from '@pictaccio/admin-api/database/helpers/transformers/float_transformer';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
-import { ProductOptions } from '@pictaccio/shared/src/types/product_options';
-import { ProductType, ProductTypes } from '@pictaccio/shared/src/types/product_type';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
-import { isTag } from '@pictaccio/shared/src/utils/guards/is_tag';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+} from '../../database/helpers/object_tags';
+import { floatTransformer } from '../../database/helpers/transformers/float_transformer';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { LocalizedString } from '../../types/localized_string';
+import { ProductOptions } from '@pictaccio/shared/types/product_options';
+import { ProductType, ProductTypes } from '@pictaccio/shared/types/product_type';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
+import { isTag } from '@pictaccio/shared/utils/guards/is_tag';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 import { Container } from 'typedi';
 import {
     BaseEntity,

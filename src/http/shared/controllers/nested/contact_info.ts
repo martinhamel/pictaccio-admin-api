@@ -1,4 +1,4 @@
-import { IsBoolean, IsOptional, IsString } from '@loufa/class-validator';
+import { IsBoolean, IsOptional, IsString } from 'class-validator';
 
 export class ContactInfo {
     @IsString()

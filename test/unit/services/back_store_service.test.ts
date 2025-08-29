@@ -3,8 +3,8 @@ import { expect, use } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai'
 import { Container } from 'typedi';
-import { BackStoreService } from '@pictaccio/admin-api/services/back_store_service';
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
+import { BackStoreService } from '../../../src/services/back_store_service';
+import { FastStoreInterface } from '../../../src/core/fast_store_interface';
 
 // Not sure why it doesn't work without this line
 require('../../../src/services/back_store_service');

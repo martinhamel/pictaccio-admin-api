@@ -1,4 +1,4 @@
-import { IsEmail } from '@loufa/class-validator';
+import { IsEmail } from 'class-validator';
 
 export class InitiatePasswordResetRequest {
     @IsEmail()

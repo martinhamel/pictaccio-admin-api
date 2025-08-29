@@ -1,5 +1,5 @@
-import { LockAcquireError } from '@pictaccio/admin-api/errors/lock_acquire_error';
-import { DbLockIds, DbLockKey } from '@pictaccio/admin-api/types/locks';
+import { LockAcquireError } from '../../errors/lock_acquire_error';
+import { DbLockIds, DbLockKey } from '../../types/locks';
 import { QueryRunner } from 'typeorm';
 
 export async function lock(runner: QueryRunner, key: DbLockKey, wait = false): Promise<void> {

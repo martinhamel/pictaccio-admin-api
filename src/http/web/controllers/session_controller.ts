@@ -3,11 +3,11 @@ import { changeLanguage } from 'i18next';
 import { Inject, Service } from 'typedi';
 import { Authorized, Body, Get, JsonController, Post, Res, Session } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { UserSession } from '@pictaccio/admin-api/types/user_session';
-import { SessionGetLangResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/session_get_lang_response';
-import { SessionPostLangResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/session_post_lang_response';
-import { SessionPostLangRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/session_post_lang_request';
+import { ConfigSchema } from '../../../core/config_schema';
+import { UserSession } from '../../../types/user_session';
+import { SessionGetLangResponse } from '../../../http/shared/controllers/responses/session_get_lang_response';
+import { SessionPostLangResponse } from '../../../http/shared/controllers/responses/session_post_lang_response';
+import { SessionPostLangRequest } from '../../../http/shared/controllers/requests/session_post_lang_request';
 
 @Service()
 @JsonController('/session')

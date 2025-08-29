@@ -1,4 +1,4 @@
-import { IsEmail, MaxLength, MinLength } from '@loufa/class-validator';
+import { IsEmail, MaxLength, MinLength } from 'class-validator';
 
 export class VerifyAuthenticatorRequest {
     @IsEmail()

@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 import { Service } from 'typedi';
-import { TransactionalPromoCode } from '@pictaccio/admin-api/database/entities/transactional_promo_code';
-import { TransactionalPromoCodeCampaign } from '@pictaccio/admin-api/database/entities/transactional_promo_code_campaign';
+import { TransactionalPromoCode } from '../database/entities/transactional_promo_code';
+import { TransactionalPromoCodeCampaign } from '../database/entities/transactional_promo_code_campaign';
 
 @Service('promo')
 export class PromoService {

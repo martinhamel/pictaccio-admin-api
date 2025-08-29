@@ -1,4 +1,4 @@
-import { DanglingAssetType, DanglingAssetTypes } from '@pictaccio/shared/src/types/dangling_asset_types';
+import { DanglingAssetType, DanglingAssetTypes } from '@pictaccio/shared/types/dangling_asset_types';
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'dangling_assets', schema: 'admin' })

@@ -1,7 +1,7 @@
-import { ReportMapper, ReportRenderer } from '@pictaccio/admin-api/core/report';
-import { createRenderer } from '@pictaccio/admin-api/services/reports';
-import { SalesReport } from '@pictaccio/admin-api/services/reports/sales_report';
-import { ReportRendererType, ReportSeriesParams, ReportType } from '@pictaccio/shared/src/types/report';
+import { ReportMapper, ReportRenderer } from '../core/report';
+import { createRenderer } from '../services/reports';
+import { SalesReport } from '../services/reports/sales_report';
+import { ReportRendererType, ReportSeriesParams, ReportType } from '@pictaccio/shared/types/report';
 import { Service } from 'typedi';
 
 @Service('report')

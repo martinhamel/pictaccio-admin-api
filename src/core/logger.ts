@@ -1,7 +1,7 @@
-import { HttpCollectorTransport } from '@pictaccio/admin-api/core/http_collector_transport';
+import { HttpCollectorTransport } from '../core/http_collector_transport';
 import { hostname } from 'node:os';
 import { createLogger, Logger as WinstonLogger, transports, format } from 'winston';
-import { config } from '@pictaccio/admin-api/config';
+import { config } from '../config';
 
 const fieldsToMask = [
     'data.body.secret',

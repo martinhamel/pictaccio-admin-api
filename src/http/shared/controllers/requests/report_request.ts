@@ -1,11 +1,11 @@
-import { IsIn, IsInt } from '@loufa/class-validator';
-import { Language, Languages } from '@pictaccio/shared/src/types/language';
+import { IsIn, IsInt } from 'class-validator';
+import { Language, Languages } from '@pictaccio/shared/types/language';
 import {
     ReportPageSize,
     ReportPageSizes,
     ReportRendererType,
     ReportRendererTypes
-} from '@pictaccio/shared/src/types/report';
+} from '@pictaccio/shared/types/report';
 
 export class ReportRequest {
     @IsIn(Languages)

@@ -1,4 +1,4 @@
-import { config } from '@pictaccio/admin-api/config';
+import { config } from '../config';
 import { Agent, request } from 'http';
 import { isObject, mergeObjects } from '@loufa/loufairy';
 import TransportStream, { TransportStreamOptions } from 'winston-transport';

@@ -1,5 +1,5 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { DbQueriesService } from '@pictaccio/admin-api/services/db_queries_service';
+import { ConfigSchema } from '../core/config_schema';
+import { DbQueriesService } from '../services/db_queries_service';
 import { join } from 'node:path';
 import { Worker } from 'node:worker_threads';
 import { Inject, Service } from 'typedi';

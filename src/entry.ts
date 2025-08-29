@@ -1,24 +1,24 @@
-import 'module-alias/register.js';
+//import 'module-alias/register.js';
 import 'reflect-metadata';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import { bootstrap, onExit } from '@pictaccio/admin-api/bootstrap';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { bootstrap, onExit } from './bootstrap';
+import { logger } from './core/logger';
 
-import { configLoader } from '@pictaccio/admin-api/loaders/config';
-import { foldersLoader } from '@pictaccio/admin-api/loaders/folders';
-import { expressLoader } from '@pictaccio/admin-api/loaders/express';
-import { i18nextLoader } from '@pictaccio/admin-api/loaders/i18next';
-import { handlebarsLoader } from '@pictaccio/admin-api/loaders/handlebars';
-import { publicLoader } from '@pictaccio/admin-api/loaders/public';
-import { servicesLoader } from '@pictaccio/admin-api/loaders/services';
-import { schedulerLoader } from '@pictaccio/admin-api/loaders/scheduler';
-import { serviceInitLoader } from '@pictaccio/admin-api/loaders/service_init';
-import { typediLoader } from '@pictaccio/admin-api/loaders/typedi';
-import { typeormLoader } from '@pictaccio/admin-api/loaders/typeorm';
-import { expressInternalLoader } from '@pictaccio/admin-api/loaders/express_internal';
-import { firstBootLoader } from '@pictaccio/admin-api/loaders/first_boot';
+import { configLoader } from './loaders/config';
+import { foldersLoader } from './loaders/folders';
+import { expressLoader } from './loaders/express';
+import { i18nextLoader } from './loaders/i18next';
+import { handlebarsLoader } from './loaders/handlebars';
+import { publicLoader } from './loaders/public';
+import { servicesLoader } from './loaders/services';
+import { schedulerLoader } from './loaders/scheduler';
+import { serviceInitLoader } from './loaders/service_init';
+import { typediLoader } from './loaders/typedi';
+import { typeormLoader } from './loaders/typeorm';
+import { expressInternalLoader } from './loaders/express_internal';
+import { firstBootLoader } from './loaders/first_boot';
 
 function exitHandler(kind: string, exitCode: number | string, error: Error): void {
     switch (kind) {

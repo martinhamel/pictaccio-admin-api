@@ -1,5 +1,5 @@
-import { IsBoolean, IsHexColor } from '@loufa/class-validator';
-import { SessionColor as SessionColorType } from '@pictaccio/shared/src/types/session_color';
+import { IsBoolean, IsHexColor } from 'class-validator';
+import { SessionColor as SessionColorType } from '@pictaccio/shared/types/session_color';
 
 export class SessionColor implements SessionColorType {
     @IsHexColor()

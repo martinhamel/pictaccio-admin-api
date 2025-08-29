@@ -1,19 +1,19 @@
 import { Authorized, Body, CurrentUser, Get, JsonController, Post, Req, Res } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { config } from '@pictaccio/admin-api/config';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
-import { EditColorsRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/edit_colors_request';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
-import { ColorsReadResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/colors_read_response';
+import { config } from '../../../config';
+import { ConfigSchema } from '../../../core/config_schema';
+import { PublicStoreConfig } from '../../../database/entities/public_store_config';
+import { EditColorsRequest } from '../../../http/shared/controllers/requests/edit_colors_request';
+import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
+import { ColorsReadResponse } from '../../../http/shared/controllers/responses/colors_read_response';
 import { Response } from 'express';
 import { checkFileMimeType } from '@loufa/loufairy-server/src/entry';
 import { Inject, Service } from 'typedi';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
-import { BrandingService } from '@pictaccio/admin-api/services/branding_service';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { Request } from '../../../types/request';
+import { User } from '@pictaccio/shared/types/user';
+import { BrandingService } from '../../../services/branding_service';
 import { promisify } from 'util';
 
 @Service()

@@ -1,9 +1,9 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
 import {
     TransactionalPromoCodeCampaign
-} from '@pictaccio/admin-api/database/entities/transactional_promo_code_campaign';
-import { DataTableReadRequest } from '@pictaccio/admin-api/database/helpers/data_table';
+} from '../../database/entities/transactional_promo_code_campaign';
+import { DataTableReadRequest } from '../../database/helpers/data_table';
 import {
     BaseEntity,
     Column,

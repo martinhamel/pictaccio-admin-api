@@ -1,4 +1,4 @@
-import { SubjectInfoExtra } from '@pictaccio/admin-api/types/subject_info_extra';
+import { SubjectInfoExtra } from './subject_info_extra';
 
 export interface SubjectInfo {
     firstName: string;

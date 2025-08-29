@@ -1,7 +1,7 @@
 import { AccessControl } from 'accesscontrol';
 import { Inject, Service } from 'typedi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { Permission } from '@pictaccio/admin-api/types/permission';
+import { ConfigSchema } from '../core/config_schema';
+import { Permission } from '../types/permission';
 
 type Operation = 'create:any' | 'read:any' | 'update:any' | 'delete:any' |
     'create:own' | 'read:own' | 'update:own' | 'delete:own';

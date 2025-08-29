@@ -1,8 +1,8 @@
 import { Action, createParamDecorator } from '@loufa/routing-controllers';
-import { Language, Languages } from '@pictaccio/shared/src/types/language';
+import { Language, Languages } from '@pictaccio/shared/types/language';
 import { Container } from 'typedi';
-import { getFixedT } from '@pictaccio/admin-api/loaders/i18next';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { getFixedT } from '../../../loaders/i18next';
+import { ConfigSchema } from '../../../core/config_schema';
 
 const config: ConfigSchema = Container.get<ConfigSchema>('config');
 

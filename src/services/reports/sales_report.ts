@@ -1,14 +1,14 @@
-import { Report, ReportRenderer, ReportTimeSeries, ReportView } from '@pictaccio/admin-api/core/report';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { AdminSalesStat } from '@pictaccio/admin-api/database/entities/admin_sales_stat';
+import { Report, ReportRenderer, ReportTimeSeries, ReportView } from '../../core/report';
+import { appDataSource } from '../../database/data_source';
+import { AdminSalesStat } from '../../database/entities/admin_sales_stat';
 import {
     ReportSeriesParams,
     ReportViewName,
     SalesReportSalesSeriesFeatureEntry,
     SalesReportSalesSeriesParams,
     SalesReportSeriesName
-} from '@pictaccio/shared/src/types/report';
-import { resolveDateRange } from '@pictaccio/shared/src/utils/date';
+} from '@pictaccio/shared/types/report';
+import { resolveDateRange } from '@pictaccio/shared/utils/date';
 import { Response } from 'express';
 import { TFunction } from 'i18next';
 import { Between } from 'typeorm';

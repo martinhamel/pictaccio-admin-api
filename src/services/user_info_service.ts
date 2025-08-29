@@ -1,16 +1,16 @@
 import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
 import { extname, join } from 'path';
 import { Container, Inject, Service } from 'typedi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { getMetadata } from '@pictaccio/admin-api/database/decorators/metadata';
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
-import { UserNotFoundError } from '@pictaccio/admin-api/errors/user_not_found_error';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { User } from '@pictaccio/shared/src/types/user';
-import { UserInfo } from '@pictaccio/shared/src/types/user_info';
-import { UserName } from '@pictaccio/shared/src/types/user_name';
-import { UserStatuses } from '@pictaccio/shared/src/types/user_status';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
+import { getMetadata } from '../database/decorators/metadata';
+import { AdminUser } from '../database/entities/admin_user';
+import { UserNotFoundError } from '../errors/user_not_found_error';
+import { InvalidFormatError } from '../errors/invalid_format_error';
+import { User } from '@pictaccio/shared/types/user';
+import { UserInfo } from '@pictaccio/shared/types/user_info';
+import { UserName } from '@pictaccio/shared/types/user_name';
+import { UserStatuses } from '@pictaccio/shared/types/user_status';
 
 @Service('user-info')
 export class UserInfoService {

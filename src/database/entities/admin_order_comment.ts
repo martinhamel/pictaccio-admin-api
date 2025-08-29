@@ -1,6 +1,6 @@
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { OrderComment } from '@pictaccio/admin-api/types/order_comment';
+import { AdminUser } from '../../database/entities/admin_user';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
+import { OrderComment } from '../../types/order_comment';
 import {
     BaseEntity,
     Column,

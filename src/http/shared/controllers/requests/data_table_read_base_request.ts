@@ -1,4 +1,4 @@
-import { IsDefined, IsIn, IsInt, IsOptional, IsString, ValidateNested } from '@loufa/class-validator';
+import { IsDefined, IsIn, IsInt, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 export class FilterOption {
     @IsString()

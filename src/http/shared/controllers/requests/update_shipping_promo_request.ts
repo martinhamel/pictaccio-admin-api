@@ -4,13 +4,13 @@ import {
     IsDate,
     IsNumber, IsOptional,
     ValidateNested
-} from '@loufa/class-validator';
+} from 'class-validator';
 import { Transform } from 'class-transformer';
-import { LocalizedString } from '@pictaccio/admin-api/http/shared/controllers/nested/localized_string';
-import { SessionColor } from '@pictaccio/admin-api/http/shared/controllers/nested/session_color';
-import { SubjectInfo } from '@pictaccio/admin-api/http/shared/controllers/nested/subject_info';
-import { SubjectInfoMappings } from '@pictaccio/admin-api/http/shared/controllers/nested/subject_info_mappings';
-import { IsNullable } from '@pictaccio/admin-api/http/shared/validators/is_nullable';
+import { LocalizedString } from '../../../../http/shared/controllers/nested/localized_string';
+import { SessionColor } from '../../../../http/shared/controllers/nested/session_color';
+import { SubjectInfo } from '../../../../http/shared/controllers/nested/subject_info';
+import { SubjectInfoMappings } from '../../../../http/shared/controllers/nested/subject_info_mappings';
+import { IsNullable } from '../../../../http/shared/validators/is_nullable';
 
 export class UpdateShippingPromoRequest {
     @IsNumber()

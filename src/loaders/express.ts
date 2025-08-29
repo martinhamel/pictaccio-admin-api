@@ -7,12 +7,12 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import { Container } from 'typedi';
 import { Action, OwnershipChecker, useExpressServer } from '@loufa/routing-controllers';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap';
-import { Collection } from '@pictaccio/admin-api/core/collection';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { User } from '@pictaccio/shared/src/types/user';
-import { View } from '@pictaccio/admin-api/http/web/views/view';
+import { LoaderInterface } from '../bootstrap';
+import { Collection } from '../core/collection';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
+import { User } from '@pictaccio/shared/types/user';
+import { View } from '../http/web/views/view';
 import cors from 'cors';
 
 type Operation = 'create:any' | 'read:any' | 'update:any' | 'delete:any' |

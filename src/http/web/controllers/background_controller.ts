@@ -1,41 +1,41 @@
 import { Authorized, Body, Get, JsonController, Post, Req } from '@loufa/routing-controllers';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { TransactionalBackground } from '@pictaccio/admin-api/database/entities/transactional_background';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
+import { logger } from '../../../core/logger';
+import { TransactionalBackground } from '../../../database/entities/transactional_background';
+import { httpCommonFields } from '../../../core/logger_common';
 import {
     TransactionalBackgroundCategory
-} from '@pictaccio/admin-api/database/entities/transactional_background_category';
+} from '../../../database/entities/transactional_background_category';
 import {
     DataTable,
     fromCreateRequest,
     fromDeleteRequest,
     fromReadRequest,
     fromUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { findTags, tagObjects, untagObjects } from '@pictaccio/admin-api/database/helpers/object_tags';
+} from '../../../database/helpers/data_table';
+import { findTags, tagObjects, untagObjects } from '../../../database/helpers/object_tags';
 import {
     DataTableCreateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
+} from '../../../http/shared/controllers/requests/data_table_create_base_request';
 import {
     DataTableDeleteBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
+} from '../../../http/shared/controllers/requests/data_table_delete_base_request';
 import {
     DataTableReadBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
+} from '../../../http/shared/controllers/requests/data_table_read_base_request';
 import {
     DataTableUpdateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { TagObjectRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/tag_object_request';
+} from '../../../http/shared/controllers/requests/data_table_update_base_request';
+import { TagObjectRequest } from '../../../http/shared/controllers/requests/tag_object_request';
 import {
     AllProductionIdentifierResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/all_production_identifier_response';
-import { DataTableBaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/data_table_base_response';
-import { ReadTagsResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/read_tags_response';
+} from '../../../http/shared/controllers/responses/all_production_identifier_response';
+import { DataTableBaseResponse } from '../../../http/shared/controllers/responses/data_table_base_response';
+import { ReadTagsResponse } from '../../../http/shared/controllers/responses/read_tags_response';
 import {
     ReadWithProductionIdentifierResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/read_with_production_identifier_response';
-import { TagObjectResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/tag_object_response';
-import { Request } from '@pictaccio/admin-api/types/request';
+} from '../../../http/shared/controllers/responses/read_with_production_identifier_response';
+import { TagObjectResponse } from '../../../http/shared/controllers/responses/tag_object_response';
+import { Request } from '../../../types/request';
 import { Service } from 'typedi';
 
 @Service()

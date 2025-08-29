@@ -4,7 +4,7 @@ import {
     ReportSeriesParams,
     ReportType,
     ReportViewName
-} from '@pictaccio/shared/src/types/report';
+} from '@pictaccio/shared/types/report';
 import { Response } from 'express';
 import { TFunction } from 'i18next';
 

@@ -1,6 +1,6 @@
-import { IsNumber, ValidateNested } from '@loufa/class-validator';
-import { CanadianTaxLocality } from '@pictaccio/admin-api/http/shared/controllers/nested/canadian_tax_locality';
-import { TransactionInfo } from '@pictaccio/admin-api/http/shared/controllers/nested/transaction_info';
+import { IsNumber, ValidateNested } from 'class-validator';
+import { CanadianTaxLocality } from '../../../../http/shared/controllers/nested/canadian_tax_locality';
+import { TransactionInfo } from '../../../../http/shared/controllers/nested/transaction_info';
 
 export class Transaction {
     @IsNumber()

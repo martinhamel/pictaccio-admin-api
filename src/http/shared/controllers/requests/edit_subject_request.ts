@@ -1,4 +1,4 @@
-import { IsNumberString, IsString, ValidateNested } from '@loufa/class-validator';
+import { IsNumberString, IsString, ValidateNested } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class SubjectInfoItem {

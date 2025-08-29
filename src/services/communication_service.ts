@@ -1,19 +1,19 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { MailerInterface } from '@pictaccio/admin-api/core/mailer_interface';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
-import { getFixedT } from '@pictaccio/admin-api/loaders/i18next';
-import HtmlService from '@pictaccio/admin-api/services/html_service';
-import { InviteDescriptor } from '@pictaccio/admin-api/types/invite_descriptor';
-import { ResetPasswordDescriptor } from '@pictaccio/admin-api/types/reset_password_descriptor';
-import { ensureTrailingSlash } from '@pictaccio/admin-api/utils/ensure_trailing_slash';
-import { CssColorContext } from '@pictaccio/shared/src/types/css_color_context';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
+import { MailerInterface } from '../core/mailer_interface';
+import { PublicStoreConfig } from '../database/entities/public_store_config';
+import { getFixedT } from '../loaders/i18next';
+import HtmlService from '../services/html_service';
+import { InviteDescriptor } from '../types/invite_descriptor';
+import { ResetPasswordDescriptor } from '../types/reset_password_descriptor';
+import { ensureTrailingSlash } from '../utils/ensure_trailing_slash';
+import { CssColorContext } from '@pictaccio/shared/types/css_color_context';
 import {
     CssStyleDescription,
     CssStyleInternal,
     CssStyleTransactional
-} from '@pictaccio/shared/src/types/css_color_descriptor';
-import { OrderDescriptor } from '@pictaccio/shared/src/types/order_descriptor';
+} from '@pictaccio/shared/types/css_color_descriptor';
+import { OrderDescriptor } from '@pictaccio/shared/types/order_descriptor';
 import { join } from 'path';
 import { Inject, Service } from 'typedi';
 

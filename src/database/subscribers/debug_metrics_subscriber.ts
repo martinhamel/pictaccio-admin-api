@@ -1,7 +1,7 @@
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { StoreInterface } from '@pictaccio/admin-api/core/store_interface';
-import { DbQueriesService, DbQuery } from '@pictaccio/admin-api/services/db_queries_service';
-import { AsyncStorageItemTypeMap } from '@pictaccio/admin-api/types/async_storage_items';
+import { ConfigSchema } from '../../core/config_schema';
+import { StoreInterface } from '../../core/store_interface';
+import { DbQueriesService, DbQuery } from '../../services/db_queries_service';
+import { AsyncStorageItemTypeMap } from '../../types/async_storage_items';
 import Container from 'typedi';
 import { EntitySubscriberInterface, EventSubscriber } from 'typeorm';
 import { AfterQueryEvent } from 'typeorm/subscriber/event/QueryEvent';

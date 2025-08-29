@@ -1,18 +1,18 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { TransactionalProduct } from '../../database/entities/transactional_product';
 import {
     TransactionalProductCatalogRank
-} from '@pictaccio/admin-api/database/entities/transactional_product_catalog_rank';
+} from '../../database/entities/transactional_product_catalog_rank';
 import {
     DataTableCreateRequest,
     DataTableEntityMethods,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+} from '../../database/helpers/data_table';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { LocalizedString } from '../../types/localized_string';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 import {
     BaseEntity,
     Column,

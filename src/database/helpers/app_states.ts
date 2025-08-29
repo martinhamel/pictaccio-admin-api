@@ -1,12 +1,12 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { PublicAppState } from '@pictaccio/admin-api/database/entities/public_app_state';
+import { logger } from '../../core/logger';
+import { appDataSource } from '../../database/data_source';
+import { PublicAppState } from '../../database/entities/public_app_state';
 import {
     AppStateKey,
     AppStateKeyTypeDefaults,
     AppStateValueType,
     isAppStateValueType
-} from '@pictaccio/admin-api/types/app_states';
+} from '../../types/app_states';
 import { QueryRunner } from 'typeorm';
 
 export async function getAppState<K extends AppStateKey>(key: K): Promise<AppStateValueType<K>> {

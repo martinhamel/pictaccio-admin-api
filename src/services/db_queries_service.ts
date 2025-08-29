@@ -1,6 +1,6 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { HttpMethod } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
+import { logger } from '..//core/logger';
+import { HttpMethod } from '..//types/request';
+import { User } from '@pictaccio/shared/types/user';
 import { isMainThread, parentPort } from 'node:worker_threads';
 import { Service } from 'typedi';
 

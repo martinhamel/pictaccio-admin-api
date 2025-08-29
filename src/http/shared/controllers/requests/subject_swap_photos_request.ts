@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString } from '@loufa/class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class SubjectSwapPhotosRequest {
     @IsNumber()

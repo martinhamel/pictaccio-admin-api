@@ -1,4 +1,4 @@
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
+import { FastStoreInterface } from '../core/fast_store_interface';
 import { Inject, Service } from 'typedi';
 
 @Service('jobs-comm-worker')

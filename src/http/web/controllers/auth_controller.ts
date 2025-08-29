@@ -90,7 +90,7 @@ import StoreConfigService from '../../../services/store_config_service';
 import { Request } from '../../../types/request';
 import { UserSession } from '../../../types/user_session';
 import { ensureTrailingSlash } from '../../../utils/ensure_trailing_slash';
-import { User } from '@pictaccio/shared/src/types/user';
+import { User } from '@pictaccio/shared/types/user';
 import { Response } from 'express';
 import { Inject, Service } from 'typedi';
 

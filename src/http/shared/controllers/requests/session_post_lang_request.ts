@@ -1,5 +1,5 @@
-import { IsLocale } from '@loufa/class-validator';
-import { Language } from '@pictaccio/admin-api/types/language';
+import { IsLocale } from 'class-validator';
+import { Language } from '../../../../types/language';
 
 export class SessionPostLangRequest {
     @IsLocale()

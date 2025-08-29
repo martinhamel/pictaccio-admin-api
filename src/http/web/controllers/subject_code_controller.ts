@@ -1,15 +1,15 @@
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
 import {
     VerifySubjectCodesResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/verify_subject_codes_response';
-import { Request } from '@pictaccio/admin-api/types/request';
+} from '../../../http/shared/controllers/responses/verify_subject_codes_response';
+import { Request } from '../../../types/request';
 import { Service } from 'typedi';
 import { Body, Get, JsonController, Post, Req, Res } from '@loufa/routing-controllers';
 import { Authorized, QueryParams } from '@loufa/routing-controllers';
-import { SubjectCodeGenerateRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/suject_code_generate_request';
-import { SubjectCodeGenerateResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/subject_code_generate_response';
-import { randomValue } from '@pictaccio/admin-api/core/random_value';
-import { TransactionalSubject } from '@pictaccio/admin-api/database/entities/transactional_subject';
+import { SubjectCodeGenerateRequest } from '../../../http/shared/controllers/requests/suject_code_generate_request';
+import { SubjectCodeGenerateResponse } from '../../../http/shared/controllers/responses/subject_code_generate_response';
+import { randomValue } from '../../../core/random_value';
+import { TransactionalSubject } from '../../../database/entities/transactional_subject';
 
 @Service()
 @JsonController('/subject-code')

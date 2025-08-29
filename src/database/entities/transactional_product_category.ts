@@ -1,7 +1,7 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { DataTableCreateRequest, DataTableUpdateRequest } from '@pictaccio/admin-api/database/helpers/data_table';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { DataTableCreateRequest, DataTableUpdateRequest } from '../../database/helpers/data_table';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { LocalizedString } from '../../types/localized_string';
 import {
     BaseEntity,
     Column,
@@ -12,7 +12,7 @@ import {
     QueryRunner,
     UpdateQueryBuilder
 } from 'typeorm';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 
 @Entity({ name: 'product_categories', schema: 'transactional' })
 export class TransactionalProductCategory extends BaseEntity {

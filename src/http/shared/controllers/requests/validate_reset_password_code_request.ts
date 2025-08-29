@@ -1,4 +1,4 @@
-import { IsEmail, IsNumberString, MaxLength, MinLength } from '@loufa/class-validator';
+import { IsEmail, IsNumberString, MaxLength, MinLength } from 'class-validator';
 
 export class ValidateResetPasswordCodeRequest {
     @IsEmail()

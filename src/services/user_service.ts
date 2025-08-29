@@ -1,6 +1,6 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
-import { User } from '@pictaccio/shared/src/types/user';
+import { logger } from '../core/logger';
+import { AdminUser } from '../database/entities/admin_user';
+import { User } from '@pictaccio/shared/types/user';
 import { Service } from 'typedi';
 
 @Service('user')

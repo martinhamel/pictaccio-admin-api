@@ -1,4 +1,4 @@
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
+import { appDataSource } from './data_source';
 
 export const appDataSourcePromise = appDataSource.initialize()
     .then(() => {

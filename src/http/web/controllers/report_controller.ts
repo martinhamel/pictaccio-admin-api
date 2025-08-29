@@ -1,10 +1,10 @@
 import { Authorized, BadRequestError, Get, JsonController, Param, QueryParams, Res } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { SalesReportRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/sales_report_request';
-import { ReportResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/report_response';
-import { getFixedT } from '@pictaccio/admin-api/loaders/i18next';
-import { ReportService } from '@pictaccio/admin-api/services/report_service';
-import { ReportType, ReportTypes } from '@pictaccio/shared/src/types/report';
+import { SalesReportRequest } from '../../../http/shared/controllers/requests/sales_report_request';
+import { ReportResponse } from '../../../http/shared/controllers/responses/report_response';
+import { getFixedT } from '../../../loaders/i18next';
+import { ReportService } from '../../../services/report_service';
+import { ReportType, ReportTypes } from '@pictaccio/shared/types/report';
 import { Inject, Service } from 'typedi';
 import { Response } from 'express';
 

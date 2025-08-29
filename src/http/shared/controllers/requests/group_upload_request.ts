@@ -1,4 +1,4 @@
-import { IsNumber, IsNumberString, IsString, ValidateNested } from '@loufa/class-validator';
+import { IsNumber, IsNumberString, IsString, ValidateNested } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 class GroupUploadData {

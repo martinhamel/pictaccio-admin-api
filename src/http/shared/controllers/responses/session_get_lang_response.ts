@@ -1,5 +1,5 @@
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
-import { IsLocale } from '@loufa/class-validator';
+import { BaseResponse } from '../../../../http/shared/controllers/responses/base_response';
+import { IsLocale } from 'class-validator';
 
 export class SessionGetLangResponse extends BaseResponse {
     @IsLocale()

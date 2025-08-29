@@ -1,16 +1,16 @@
 import { en, en_CA, Faker, fr, fr_CA, Randomizer } from '@faker-js/faker';
 import { capitalize } from '@loufa/loufairy';
-import { getUniqueFilename } from '@pictaccio/admin-api/';
+import { getUniqueFilename } from '/';
 // @ts-ignore
-import { ProductType, ProductTypes } from '@pictaccio/shared/src/types/product_type';
+import { ProductType, ProductTypes } from '@pictaccio/shared/types/product_type';
 // @ts-ignore
-import { WorkflowOptions } from '@pictaccio/shared/src/types/workflow_options';
+import { WorkflowOptions } from '@pictaccio/shared/types/workflow_options';
 // @ts-ignore
-import { LocalizedString } from '@pictaccio/shared/src/types/localized_string';
+import { LocalizedString } from '@pictaccio/shared/types/localized_string';
 // @ts-ignore
-import { OrderSnapshot } from '@pictaccio/shared/src/types/order_snapshot';
+import { OrderSnapshot } from '@pictaccio/shared/types/order_snapshot';
 // @ts-ignore
-import { calculatePhysicalProduct } from '@pictaccio/shared/src/utils/cart_item_price_calculators';
+import { calculatePhysicalProduct } from '@pictaccio/shared/utils/cart_item_price_calculators';
 import { OrderCartItem, OrderCartItems } from '../src/types/order_cart_item';
 import { UniqueEnforcer } from 'enforce-unique';
 import fetch from 'node-fetch';

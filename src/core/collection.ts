@@ -1,7 +1,7 @@
 import { readDir } from '@loufa/loufairy-server';
 import { EventEmitter } from 'events';
 import path from 'path';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { logger } from '../core/logger';
 
 export interface CollectionItem {
     file: string;

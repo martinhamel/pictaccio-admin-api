@@ -1,4 +1,4 @@
-import { AdminTag } from '@pictaccio/admin-api/database/entities/admin_tag';
+import { AdminTag } from '../../database/entities/admin_tag';
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'tag_map', schema: 'admin' })

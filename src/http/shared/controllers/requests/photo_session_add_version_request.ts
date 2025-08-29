@@ -1,4 +1,4 @@
-import { IsNumberString, IsString } from '@loufa/class-validator';
+import { IsNumberString, IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class PhotoSessionAddVersionRequest {

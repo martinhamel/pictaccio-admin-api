@@ -2,10 +2,10 @@ import {
     DataTableEntityMethods,
     DataTableCreateRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
-import { WorkflowOptions } from '@pictaccio/shared/src/types/workflow_options';
+} from '../../database/helpers/data_table';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
+import { WorkflowOptions } from '@pictaccio/shared/types/workflow_options';
 import {
     BaseEntity,
     Column,
@@ -17,7 +17,7 @@ import {
     UpdateQueryBuilder
 } from 'typeorm';
 import { AllowOnWire } from '../decorators/allow_on_wire';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 
 @Entity({ name: 'workflows', schema: 'transactional' })
 export class TransactionalWorkflow

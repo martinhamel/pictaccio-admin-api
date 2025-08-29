@@ -1,5 +1,5 @@
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
-import { TransactionalProductThemeSet } from '@pictaccio/admin-api/database/entities/transactional_product_theme_set';
+import { TransactionalProduct } from '../../database/entities/transactional_product';
+import { TransactionalProductThemeSet } from '../../database/entities/transactional_product_theme_set';
 import {
     BaseEntity,
     Column,

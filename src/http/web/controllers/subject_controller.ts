@@ -1,13 +1,13 @@
 import { Service } from 'typedi';
 import { Authorized, Body, Get, JsonController, Post, QueryParams } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { TransactionalSubject } from '@pictaccio/admin-api/database/entities/transactional_subject';
-import { EditSubjectRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/edit_subject_request';
-import { EditAccountResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/edit_subject_response';
-import { SubjectExistResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/subject_exist_response';
-import { SubjectExistRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/subject_exist_request';
-import { SubjectSwapPhotosRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/subject_swap_photos_request';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
+import { TransactionalSubject } from '../../../database/entities/transactional_subject';
+import { EditSubjectRequest } from '../../../http/shared/controllers/requests/edit_subject_request';
+import { EditAccountResponse } from '../../../http/shared/controllers/responses/edit_subject_response';
+import { SubjectExistResponse } from '../../../http/shared/controllers/responses/subject_exist_response';
+import { SubjectExistRequest } from '../../../http/shared/controllers/requests/subject_exist_request';
+import { SubjectSwapPhotosRequest } from '../../../http/shared/controllers/requests/subject_swap_photos_request';
+import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
 
 @Service()
 @JsonController('/subject')

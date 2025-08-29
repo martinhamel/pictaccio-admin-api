@@ -1,10 +1,10 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { DataTableCreateRequest, DataTableUpdateRequest } from '@pictaccio/admin-api/database/helpers/data_table';
-import { floatTransformer } from '@pictaccio/admin-api/database/helpers/transformers/float_transformer';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
-import { DeliveryMethod, DeliveryMethods } from '@pictaccio/shared/src/types/delivery_method';
-import { DeliveryMethodOptions } from '@pictaccio/shared/src/types/delivery_method_options';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { DataTableCreateRequest, DataTableUpdateRequest } from '../../database/helpers/data_table';
+import { floatTransformer } from '../../database/helpers/transformers/float_transformer';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { LocalizedString } from '../../types/localized_string';
+import { DeliveryMethod, DeliveryMethods } from '@pictaccio/shared/types/delivery_method';
+import { DeliveryMethodOptions } from '@pictaccio/shared/types/delivery_method_options';
 import {
     BaseEntity,
     Column,
@@ -15,7 +15,7 @@ import {
     QueryRunner,
     UpdateQueryBuilder
 } from 'typeorm';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 
 @Entity({ name: 'delivery_options', schema: 'transactional' })
 export class TransactionalDeliveryOption extends BaseEntity {

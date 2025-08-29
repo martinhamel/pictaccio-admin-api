@@ -1,12 +1,12 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { AdminBackgroundStat } from '@pictaccio/admin-api/database/entities/admin_background_stat';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
-import { getAppStateQuery, setAppStateQuery } from '@pictaccio/admin-api/database/helpers/app_states';
-import { lock } from '@pictaccio/admin-api/database/helpers/locks';
-import { LockAcquireError } from '@pictaccio/admin-api/errors/lock_acquire_error';
-import { VirtualProduct } from '@pictaccio/shared/src/types/virtual_product';
+import { logger } from '../core/logger';
+import { appDataSource } from '../database/data_source';
+import { AdminBackgroundStat } from '../database/entities/admin_background_stat';
+import { TransactionalOrder } from '../database/entities/transactional_order';
+import { TransactionalProduct } from '../database/entities/transactional_product';
+import { getAppStateQuery, setAppStateQuery } from '../database/helpers/app_states';
+import { lock } from '../database/helpers/locks';
+import { LockAcquireError } from '../errors/lock_acquire_error';
+import { VirtualProduct } from '@pictaccio/shared/types/virtual_product';
 import { MoreThanOrEqual, QueryRunner } from 'typeorm';
 
 const MAX_BATCH_SIZE = 1000;

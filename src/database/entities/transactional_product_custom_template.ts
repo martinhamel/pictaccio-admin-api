@@ -1,8 +1,8 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { DataTableCreateRequest, DataTableUpdateRequest } from '@pictaccio/admin-api/database/helpers/data_table';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { CustomProductOptions } from '@pictaccio/admin-api/types/custom_product_options';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { DataTableCreateRequest, DataTableUpdateRequest } from '../../database/helpers/data_table';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { CustomProductOptions } from '../../types/custom_product_options';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 import {
     BaseEntity,
     Column,

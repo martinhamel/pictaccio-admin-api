@@ -4,7 +4,7 @@ import {
     AppStateValue,
     AppStateValueType,
     isAppStateValueType
-} from '@pictaccio/admin-api/types/app_states';
+} from '../../types/app_states';
 import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
 
 @Entity({ name: 'app_states', schema: 'public' })

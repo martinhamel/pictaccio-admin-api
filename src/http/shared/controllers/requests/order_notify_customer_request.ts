@@ -1,4 +1,4 @@
-import { IsNumberString } from '@loufa/class-validator';
+import { IsNumberString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class OrderNotifyCustomerRequest {

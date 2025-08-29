@@ -1,9 +1,8 @@
 import { Authorized, Res, JsonController, Get } from '@loufa/routing-controllers';
 import { Response } from 'express';
 import { Inject, Service } from 'typedi';
-import { Controller } from '@pictaccio/admin-api/http/web/controllers/controller';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { ConfigResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/config_response';
+import { ConfigSchema } from '../../../core/config_schema';
+import { ConfigResponse } from '../../../http/shared/controllers/responses/config_response';
 
 @Service()
 @JsonController()

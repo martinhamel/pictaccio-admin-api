@@ -1,4 +1,4 @@
-import { ReportRenderer, SectionParams, TableParams } from '@pictaccio/admin-api/core/report';
+import { ReportRenderer, SectionParams, TableParams } from '../../core/report';
 import { stringify } from 'csv-stringify';
 import { Response } from 'express';
 import { promisify } from 'node:util';

@@ -1,5 +1,5 @@
-import { IsEmail, IsNumberString, IsUUID, MaxLength, MinLength } from '@loufa/class-validator';
-import { Password } from '@pictaccio/admin-api/http/shared/validators/password';
+import { IsEmail, IsNumberString, IsUUID, MaxLength, MinLength } from 'class-validator';
+import { Password } from '../../../../http/shared/validators/password';
 
 export class CompletePasswordResetRequest {
     @IsEmail()

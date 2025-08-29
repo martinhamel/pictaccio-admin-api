@@ -1,4 +1,4 @@
-import { IsDefined, ValidateNested } from '@loufa/class-validator';
+import { IsDefined, ValidateNested } from 'class-validator';
 import { Transform, Type } from 'class-transformer';
 
 export class DataTableValues {

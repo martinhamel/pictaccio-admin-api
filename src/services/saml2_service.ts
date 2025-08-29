@@ -1,6 +1,6 @@
 import { ServiceProvider, IdentityProvider } from 'saml2-js';
 import { Container, Service } from 'typedi';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { logger } from '../core/logger';
 
 const config = Container.get('config') as any;
 const serviceProvider = new ServiceProvider({

@@ -1,10 +1,10 @@
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
-import WebsocketService from '@pictaccio/admin-api/services/websocket_service';
+import { FastStoreInterface } from '../core/fast_store_interface';
+import { TransactionalProduct } from '../database/entities/transactional_product';
+import WebsocketService from '../services/websocket_service';
 import { Inject, Service } from 'typedi';
-import { NotificationDescriptor } from '@pictaccio/admin-api/types/notification_descriptor';
-import { getLocaleStrings } from '@pictaccio/admin-api/utils/get_locale_strings';
-import { sha256 } from '@pictaccio/admin-api/utils/hash';
+import { NotificationDescriptor } from '../types/notification_descriptor';
+import { getLocaleStrings } from '../utils/get_locale_strings';
+import { sha256 } from '../utils/hash';
 
 @Service('notification')
 export default class NotificationService {

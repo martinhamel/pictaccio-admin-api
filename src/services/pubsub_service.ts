@@ -1,12 +1,12 @@
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
-import { PublicAppIntegration } from '@pictaccio/admin-api/database/entities/public_app_integration';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
-import { AsyncStoreService } from '@pictaccio/admin-api/services/async_store_service';
-import StoreConfigService from '@pictaccio/admin-api/services/store_config_service';
-import { StoreConfiguration } from '@pictaccio/shared/src/types/store_configuration';
-import { StoreLanguageItem } from '@pictaccio/shared/src/types/store_language_item';
-import { TaxLocality } from '@pictaccio/shared/src/types/tax_locality';
-import { TransactionalCustomization } from '@pictaccio/shared/src/types/transactional_customization';
+import { FastStoreInterface } from '../core/fast_store_interface';
+import { PublicAppIntegration } from '../database/entities/public_app_integration';
+import { PublicStoreConfig } from '../database/entities/public_store_config';
+import { AsyncStoreService } from '../services/async_store_service';
+import StoreConfigService from '../services/store_config_service';
+import { StoreConfiguration } from '@pictaccio/shared/types/store_configuration';
+import { StoreLanguageItem } from '@pictaccio/shared/types/store_language_item';
+import { TaxLocality } from '@pictaccio/shared/types/tax_locality';
+import { TransactionalCustomization } from '@pictaccio/shared/types/transactional_customization';
 import { Inject, Service } from 'typedi';
 
 const NOT_READY_MESSAGE = 'The store is not ready to accept orders. Please contact the store owner for more' +

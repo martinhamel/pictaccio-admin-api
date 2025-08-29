@@ -1,16 +1,16 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { TransactionalProductCatalog } from '@pictaccio/admin-api/database/entities/transactional_product_catalog';
-import { TransactionalSession } from '@pictaccio/admin-api/database/entities/transactional_session';
-import { TransactionalWorkflow } from '@pictaccio/admin-api/database/entities/transactional_workflow';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { TransactionalProductCatalog } from '../../database/entities/transactional_product_catalog';
+import { TransactionalSession } from '../../database/entities/transactional_session';
+import { TransactionalWorkflow } from '../../database/entities/transactional_workflow';
 import {
     DataTableCreateRequest,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { floatTransformer } from '@pictaccio/admin-api/database/helpers/transformers/float_transformer';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
-import { PromoCodeCampaignOptions } from '@pictaccio/admin-api/types/promo_code_campaign_options';
-import { validateInternalNameCharacters } from '@pictaccio/shared/src/utils/internal_name_constraint';
+} from '../../database/helpers/data_table';
+import { floatTransformer } from '../../database/helpers/transformers/float_transformer';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
+import { PromoCodeCampaignOptions } from '../../types/promo_code_campaign_options';
+import { validateInternalNameCharacters } from '@pictaccio/shared/utils/internal_name_constraint';
 import {
     BaseEntity,
     Column,

@@ -1,9 +1,9 @@
 import { BadRequestError } from '@loufa/routing-controllers';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { AllowUploads } from '@pictaccio/admin-api/database/decorators/allow_uploads';
-import { AdminDanglingAsset } from '@pictaccio/admin-api/database/entities/admin_dangling_asset';
-import { AdminTag } from '@pictaccio/admin-api/database/entities/admin_tag';
+import { ConfigSchema } from '../../core/config_schema';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { AllowUploads } from '../../database/decorators/allow_uploads';
+import { AdminDanglingAsset } from '../../database/entities/admin_dangling_asset';
+import { AdminTag } from '../../database/entities/admin_tag';
 import {
     DataTableCreateRequest,
     DataTableDeleteRequest,
@@ -11,18 +11,18 @@ import {
     DataTableOverrideResult,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
+} from '../../database/helpers/data_table';
 import {
     formatTags,
     queryObjectsByTag, queryObjectsByTags,
     queryTagObjects,
     queryTagsForObjects
-} from '@pictaccio/admin-api/database/helpers/object_tags';
-import { PubsubService } from '@pictaccio/admin-api/services/pubsub_service';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
-import { AllProductionIdentifier } from '@pictaccio/shared/src/types/all_production_identifier';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
-import { isTag } from '@pictaccio/shared/src/utils/guards/is_tag';
+} from '../../database/helpers/object_tags';
+import { PubsubService } from '../../services/pubsub_service';
+import { LocalizedString } from '../../types/localized_string';
+import { AllProductionIdentifier } from '@pictaccio/shared/types/all_production_identifier';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
+import { isTag } from '@pictaccio/shared/utils/guards/is_tag';
 import { Container } from 'typedi';
 import {
     BaseEntity,

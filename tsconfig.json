@@ -1,7 +1,51 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "include": [
-        "src/**/*.ts"
-    ],
-    "compilerOptions": {}
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "paths": {
+      "@pictaccio/shared/*": [
+        "node_modules/@pictaccio/shared/dist/src/*"
+      ],
+      "@loufa/routing-controllers-openapi": [
+        "node_modules/@loufa/routing-controllers-openapi/dist/src"
+      ],
+      "@loufa/loufairy": [
+        "node_modules/@loufa/loufairy/dist/src/entry.js"
+      ],
+      "@loufa/loufairy-server": [
+        "node_modules/@loufa/loufairy-server/dist/entry.d.ts"
+      ],
+      "@pictaccio/grpc-service-contracts/*": [
+        "node_modules/@pictaccio/grpc-service-contracts/dist/lib/grpc-service-contracts/src/image-service/*",
+      ]
+    }
+  },
+  "exclude": [
+    "tmp",
+  ],
+  "include": [
+    "src/**/*",
+  ]
 }

@@ -1,18 +1,18 @@
 import { isInteger } from '@loufa/loufairy';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { TransactionalTransaction } from '@pictaccio/admin-api/database/entities/transactional_transaction';
-import { NotFoundError } from '@pictaccio/admin-api/errors/not_found_error';
-import { ProductPhoto } from '@pictaccio/admin-api/http/shared/controllers/nested/product_photo';
-import { TransactionInfo } from '@pictaccio/admin-api/http/shared/controllers/nested/transaction_info';
-import { OrderCartItem, OrderCartItems } from '@pictaccio/admin-api/types/order_cart_item';
-import { CartItem } from '@pictaccio/shared/src/types/cart_item';
-import { OrderDescriptor } from '@pictaccio/shared/src/types/order_descriptor';
-import { OrderMeta } from '@pictaccio/shared/src/types/order_meta';
-import { OrderPhotoSelectionItem } from '@pictaccio/shared/src/types/order_photo_selection';
-import { PhotoSelections } from '@pictaccio/shared/src/types/photo_selections';
-import { PhotoVersionCollection } from '@pictaccio/shared/src/types/photo_version_collection';
-import { Subject } from '@pictaccio/shared/src/types/subject';
-import { SubjectGroup } from '@pictaccio/shared/src/types/subject_group';
+import { TransactionalOrder } from '../database/entities/transactional_order';
+import { TransactionalTransaction } from '../database/entities/transactional_transaction';
+import { NotFoundError } from '../errors/not_found_error';
+import { ProductPhoto } from '../http/shared/controllers/nested/product_photo';
+import { TransactionInfo } from '../http/shared/controllers/nested/transaction_info';
+import { OrderCartItem, OrderCartItems } from '../types/order_cart_item';
+import { CartItem } from '@pictaccio/shared/types/cart_item';
+import { OrderDescriptor } from '@pictaccio/shared/types/order_descriptor';
+import { OrderMeta } from '@pictaccio/shared/types/order_meta';
+import { OrderPhotoSelectionItem } from '@pictaccio/shared/types/order_photo_selection';
+import { PhotoSelections } from '@pictaccio/shared/types/photo_selections';
+import { PhotoVersionCollection } from '@pictaccio/shared/types/photo_version_collection';
+import { Subject } from '@pictaccio/shared/types/subject';
+import { SubjectGroup } from '@pictaccio/shared/types/subject_group';
 import { Service } from 'typedi';
 
 @Service('order')

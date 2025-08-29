@@ -1,4 +1,4 @@
-import { IsString, ValidateNested } from '@loufa/class-validator';
+import { IsString, ValidateNested } from 'class-validator';
 
 export class Subject {
     @IsString()

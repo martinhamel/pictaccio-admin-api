@@ -1,4 +1,4 @@
-import { IsBoolean, IsOptional, IsUUID } from '@loufa/class-validator';
+import { IsBoolean, IsOptional, IsUUID } from 'class-validator';
 
 export class ArchiveUserRequest {
     @IsUUID()

@@ -1,4 +1,4 @@
-import { LoaderState } from '@pictaccio/admin-api/bootstrap/loader_state';
+import { LoaderState } from '../bootstrap/loader_state';
 
 /**
  * Decorate a method meant to be offered as a LoaderState state

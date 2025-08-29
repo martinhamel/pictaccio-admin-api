@@ -1,5 +1,5 @@
-import { EmailAddress, TaxLocality } from '@pictaccio/admin-api/http/shared/controllers/requests/set_store_config_request';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
+import { EmailAddress, TaxLocality } from '../../../../http/shared/controllers/requests/set_store_config_request';
+import { BaseResponse } from '../../../../http/shared/controllers/responses/base_response';
 
 export class GetStoreConfigResponse extends BaseResponse {
     public config: {

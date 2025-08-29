@@ -1,9 +1,9 @@
 import { readDir } from '@loufa/loufairy-server';
 import path from 'path';
 import { Container } from 'typedi';
-import { LoaderInterface } from '@pictaccio/admin-api/bootstrap';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { LoaderInterface } from '../bootstrap';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
 
 const SERVICE_FILTER = /.*_service\.js$/;
 

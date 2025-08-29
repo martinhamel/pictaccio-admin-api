@@ -1,16 +1,16 @@
 import { ChannelCredentials, Metadata } from '@grpc/grpc-js';
 import { wrapGrpcClient, WrappedGrpcClient } from '@loufa/loufairy-server/src/entry';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import JobsService from '@pictaccio/admin-api/services/jobs_service';
-import { ImageClient } from '@pictaccio/grpc-service-contracts/src/image-service/image_service_v1_grpc_pb';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
+import JobsService from '../services/jobs_service';
+import { ImageClient } from '@pictaccio/grpc-service-contracts/image_service_v1_grpc_pb';
 import {
     ImageResizeItem,
     ResizeRequest,
     SizeProfile,
     WatermarkedResizeRequest
-} from '@pictaccio/grpc-service-contracts/src/image-service/image_service_v1_pb';
-import { computeThumbnailOutputFileName } from '@pictaccio/shared/src/utils/compute_thumbnail_output_filename';
+} from '@pictaccio/grpc-service-contracts/image_service_v1_pb';
+import { computeThumbnailOutputFileName } from '@pictaccio/shared/utils/compute_thumbnail_output_filename';
 import { access } from 'node:fs/promises';
 import { Inject, Service } from 'typedi';
 

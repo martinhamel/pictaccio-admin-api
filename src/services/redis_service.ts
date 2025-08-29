@@ -1,9 +1,9 @@
 import { Inject, Service } from 'typedi';
 import { createClient } from 'redis';
 import { RedisClientType } from '@redis/client';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
-import { logger } from '@pictaccio/admin-api/core/logger';
+import { ConfigSchema } from '../core/config_schema';
+import { FastStoreInterface } from '../core/fast_store_interface';
+import { logger } from '../core/logger';
 
 @Service('fast-store')
 export class RedisService implements FastStoreInterface {

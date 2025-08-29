@@ -1,8 +1,8 @@
 import { TFunction } from 'i18next';
-import { getFixedT } from '@pictaccio/admin-api/loaders/i18next';
-import { Languages } from '@pictaccio/admin-api/types/language';
-import { LocalizedString } from '@pictaccio/admin-api/types/localized_string';
-import { zipOpject } from '@pictaccio/admin-api/utils/zip_object';
+import { getFixedT } from '../loaders/i18next';
+import { Languages } from '../types/language';
+import { LocalizedString } from '../types/localized_string';
+import { zipOpject } from '../utils/zip_object';
 
 let tFunctions: TFunction[];
 

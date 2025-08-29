@@ -1,10 +1,10 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
-import { TransactionalSession } from '@pictaccio/admin-api/database/entities/transactional_session';
-import { DataTableEntityMethods, DataTableReadRequest } from '@pictaccio/admin-api/database/helpers/data_table';
-import { NotFoundError } from '@pictaccio/admin-api/errors/not_found_error';
-import type ImageService from '@pictaccio/admin-api/services/image_service';
-import { PhotoVersions } from '@pictaccio/shared/src/types/photo_versions';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
+import { TransactionalSession } from '../../database/entities/transactional_session';
+import { DataTableEntityMethods, DataTableReadRequest } from '../../database/helpers/data_table';
+import { NotFoundError } from '../../errors/not_found_error';
+import type ImageService from '../../services/image_service';
+import { PhotoVersions } from '@pictaccio/shared/types/photo_versions';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
 import { Container } from 'typedi';
 import {
     BaseEntity,

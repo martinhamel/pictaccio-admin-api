@@ -1,10 +1,10 @@
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { AdminTag } from '@pictaccio/admin-api/database/entities/admin_tag';
-import { AdminTagMap } from '@pictaccio/admin-api/database/entities/admin_tag_map';
-import { Tag } from '@pictaccio/admin-api/http/shared/controllers/nested/tag';
-import { TagScope } from '@pictaccio/shared/src/types/tags';
-import { isTag } from '@pictaccio/shared/src/utils/guards/is_tag';
+import { logger } from '../../core/logger';
+import { appDataSource } from '../../database/data_source';
+import { AdminTag } from '../../database/entities/admin_tag';
+import { AdminTagMap } from '../../database/entities/admin_tag_map';
+import { Tag } from '../../http/shared/controllers/nested/tag';
+import { TagScope } from '@pictaccio/shared/types/tags';
+import { isTag } from '@pictaccio/shared/utils/guards/is_tag';
 import { BaseEntity, In, QueryRunner, SelectQueryBuilder } from 'typeorm';
 
 const FIND_TAGGABLE_OBJECTS_DEFAULT_OPTIONS: FindTaggableObjectsOptions = {

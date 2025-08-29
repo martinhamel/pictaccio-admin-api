@@ -1,4 +1,4 @@
-import { registerDecorator, ValidationOptions, ValidationArguments, buildMessage } from '@loufa/class-validator';
+import { registerDecorator, ValidationOptions, ValidationArguments, buildMessage } from 'class-validator';
 
 export function ArrayIncludes(property: readonly string[], validationOptions?: ValidationOptions) {
     return function (object: any, propertyName: string): void {

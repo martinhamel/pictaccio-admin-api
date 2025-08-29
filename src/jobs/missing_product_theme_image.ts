@@ -1,5 +1,5 @@
-import { TransactionalProductTypeTheme } from '@pictaccio/admin-api/database/entities/transactional_product_type_theme';
-import type JobsCommWorkerService from '@pictaccio/admin-api/services/jobs_comm_worker_service';
+import { TransactionalProductTypeTheme } from '../database/entities/transactional_product_type_theme';
+import type JobsCommWorkerService from '../services/jobs_comm_worker_service';
 import { Container } from 'typedi';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('../services/jobs_comm_worker_service.js');

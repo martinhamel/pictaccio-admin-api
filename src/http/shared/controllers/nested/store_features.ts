@@ -1,4 +1,4 @@
-import { IsBoolean } from '@loufa/class-validator';
+import { IsBoolean } from 'class-validator';
 
 export class StoreFeatures {
     @IsBoolean()

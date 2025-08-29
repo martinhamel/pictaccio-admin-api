@@ -1,4 +1,4 @@
-import { IsDefined } from '@loufa/class-validator';
+import { IsDefined } from 'class-validator';
 
 export class CreateBulkPromoCode {
     @IsDefined()

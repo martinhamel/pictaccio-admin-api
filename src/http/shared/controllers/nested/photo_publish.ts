@@ -1,4 +1,4 @@
-import { IsNumber, IsNumberString, IsString } from '@loufa/class-validator';
+import { IsNumber, IsNumberString, IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class PhotoPublish {

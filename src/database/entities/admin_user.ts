@@ -1,9 +1,9 @@
-import { config } from '@pictaccio/admin-api/config';
-import { AllowUploads } from '@pictaccio/admin-api/database/decorators/allow_uploads';
-import { NotFoundError } from '@pictaccio/admin-api/errors/not_found_error';
-import { User } from '@pictaccio/shared/src/types/user';
-import { UserInfo } from '@pictaccio/shared/src/types/user_info';
-import { UserStatus, UserStatuses } from '@pictaccio/shared/src/types/user_status';
+import { config } from '../../config';
+import { AllowUploads } from '../../database/decorators/allow_uploads';
+import { NotFoundError } from '../../errors/not_found_error';
+import { User } from '@pictaccio/shared/types/user';
+import { UserInfo } from '@pictaccio/shared/types/user_info';
+import { UserStatus, UserStatuses } from '@pictaccio/shared/types/user_status';
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'users', schema: 'admin' })

@@ -1,6 +1,6 @@
-import { AdminSalesStatsProduct } from '@pictaccio/admin-api/database/entities/admin_sales_stats_product';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { TransactionalSession } from '@pictaccio/admin-api/database/entities/transactional_session';
+import { AdminSalesStatsProduct } from '../../database/entities/admin_sales_stats_product';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
+import { TransactionalSession } from '../../database/entities/transactional_session';
 import {
     AfterLoad,
     BaseEntity,

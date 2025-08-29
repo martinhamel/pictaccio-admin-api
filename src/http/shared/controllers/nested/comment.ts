@@ -1,5 +1,5 @@
-import { IsBoolean, IsDate, IsDefined, IsNumber, IsNumberString } from '@loufa/class-validator';
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
+import { IsBoolean, IsDate, IsDefined, IsNumber, IsNumberString } from 'class-validator';
+import { AdminUser } from '../../../../database/entities/admin_user';
 import { Transform } from 'class-transformer';
 
 export class Comment {

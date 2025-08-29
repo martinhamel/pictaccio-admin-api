@@ -1,5 +1,5 @@
-import { IsIn, IsOptional, IsString } from '@loufa/class-validator';
-import { TagScope, TagScopes } from '@pictaccio/shared/src/types/tags';
+import { IsIn, IsOptional, IsString } from 'class-validator';
+import { TagScope, TagScopes } from '@pictaccio/shared/types/tags';
 
 export class Tag {
     @IsString()

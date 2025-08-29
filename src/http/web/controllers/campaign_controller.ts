@@ -1,29 +1,29 @@
 import { Authorized, Body, CurrentUser, JsonController, Post, Req } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { randomValue } from '@pictaccio/admin-api/core/random_value';
-import { TransactionalSubject } from '@pictaccio/admin-api/database/entities/transactional_subject';
+import { randomValue } from '../../../core/random_value';
+import { TransactionalSubject } from '../../../database/entities/transactional_subject';
 import { Inject, Service } from 'typedi';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { User } from '@pictaccio/shared/src/types/user';
-import { CampaignCreateBulkCodesRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/campaign_create_bulk_codes_request';
-import { CampaignCreateBulkCodesResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/campaign_create_bulk_codes_response';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { DataTableCreateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
-import { DataTableBaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/data_table_base_response';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { User } from '@pictaccio/shared/types/user';
+import { CampaignCreateBulkCodesRequest } from '../../../http/shared/controllers/requests/campaign_create_bulk_codes_request';
+import { CampaignCreateBulkCodesResponse } from '../../../http/shared/controllers/responses/campaign_create_bulk_codes_response';
+import { Request } from '../../../types/request';
+import { DataTableCreateBaseRequest } from '../../../http/shared/controllers/requests/data_table_create_base_request';
+import { DataTableBaseResponse } from '../../../http/shared/controllers/responses/data_table_base_response';
 import {
     DataTable,
     fromCreateRequest,
     fromDeleteRequest,
     fromReadRequest,
     fromUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { TransactionalPromoCodeCampaign } from '@pictaccio/admin-api/database/entities/transactional_promo_code_campaign';
-import { TransactionalPromoCode } from '@pictaccio/admin-api/database/entities/transactional_promo_code';
-import { DataTableDeleteBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
-import { DataTableReadBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
-import { DataTableUpdateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { PromoService } from '@pictaccio/admin-api/services/promo_service';
+} from '../../../database/helpers/data_table';
+import { TransactionalPromoCodeCampaign } from '../../../database/entities/transactional_promo_code_campaign';
+import { TransactionalPromoCode } from '../../../database/entities/transactional_promo_code';
+import { DataTableDeleteBaseRequest } from '../../../http/shared/controllers/requests/data_table_delete_base_request';
+import { DataTableReadBaseRequest } from '../../../http/shared/controllers/requests/data_table_read_base_request';
+import { DataTableUpdateBaseRequest } from '../../../http/shared/controllers/requests/data_table_update_base_request';
+import { PromoService } from '../../../services/promo_service';
 
 @Service()
 @JsonController('/campaign')

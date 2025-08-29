@@ -1,6 +1,6 @@
-import { AdminOrderPublishedPhoto } from '@pictaccio/admin-api/database/entities/admin_order_published_photo';
-import { OrderUploadImages } from '@pictaccio/admin-api/types/order_upload_images';
-import { PublishedPhoto } from '@pictaccio/shared/src/types/published_photo';
+import { AdminOrderPublishedPhoto } from '../../database/entities/admin_order_published_photo';
+import { OrderUploadImages } from '../../types/order_upload_images';
+import { PublishedPhoto } from '@pictaccio/shared/types/published_photo';
 import { randomUUID } from 'crypto';
 import { extname } from 'path';
 import { BaseEntity, Column, CreateDateColumn, Entity, Index, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';

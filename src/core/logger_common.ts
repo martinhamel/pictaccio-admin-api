@@ -1,4 +1,4 @@
-import { Request } from '@pictaccio/admin-api/types/request';
+import { Request } from '../types/request';
 
 export interface HttpCommonFieldsInterface {
     access_granted: boolean;

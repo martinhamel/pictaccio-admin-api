@@ -1,4 +1,4 @@
-import { IsUrl } from '@loufa/class-validator';
+import { IsUrl } from 'class-validator';
 
 export class SetStoreUrls {
     @IsUrl()

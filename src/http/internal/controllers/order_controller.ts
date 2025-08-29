@@ -1,11 +1,11 @@
 import { Get, JsonController, QueryParam, Req, UnauthorizedError } from '@loufa/routing-controllers';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { NotFoundError } from '@pictaccio/admin-api/errors/not_found_error';
-import { GetOrderIdsResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/get_order_ids_response';
-import { AuthService } from '@pictaccio/admin-api/services/auth_service';
-import { OrderService } from '@pictaccio/admin-api/services/order_service';
-import { Request } from '@pictaccio/admin-api/types/request';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { NotFoundError } from '../../../errors/not_found_error';
+import { GetOrderIdsResponse } from '../../../http/shared/controllers/responses/get_order_ids_response';
+import { AuthService } from '../../../services/auth_service';
+import { OrderService } from '../../../services/order_service';
+import { Request } from '../../../types/request';
 import { Inject, Service } from 'typedi';
 
 @Service()

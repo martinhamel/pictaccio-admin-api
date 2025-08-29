@@ -1,16 +1,16 @@
 import { Authorized, Body, CurrentUser, JsonController, Post, Req } from '@loufa/routing-controllers';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { PublicStoreConfig } from '@pictaccio/admin-api/database/entities/public_store_config';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { PublicStoreConfig } from '../../../database/entities/public_store_config';
 import {
     UpdateShippingPromoRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/update_shipping_promo_request';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
+} from '../../../http/shared/controllers/requests/update_shipping_promo_request';
+import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
 import {
     ReadShippingPromoResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/read_shipping_promo_response';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
+} from '../../../http/shared/controllers/responses/read_shipping_promo_response';
+import { Request } from '../../../types/request';
+import { User } from '@pictaccio/shared/types/user';
 import { Service } from 'typedi';
 
 @Service()

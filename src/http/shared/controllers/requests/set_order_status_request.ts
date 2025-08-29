@@ -1,5 +1,5 @@
-import { IsIn, IsNumberString } from '@loufa/class-validator';
-import { OrderStatus, OrderStatuses } from '@pictaccio/shared/src/types/order_status';
+import { IsIn, IsNumberString } from 'class-validator';
+import { OrderStatus, OrderStatuses } from '@pictaccio/shared/types/order_status';
 import { Transform } from 'class-transformer';
 
 export class SetOrderStatusRequest {

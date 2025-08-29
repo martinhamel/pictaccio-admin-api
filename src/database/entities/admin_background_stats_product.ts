@@ -1,5 +1,5 @@
-import { AdminBackgroundStat } from '@pictaccio/admin-api/database/entities/admin_background_stat';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
+import { AdminBackgroundStat } from '../../database/entities/admin_background_stat';
+import { TransactionalProduct } from '../../database/entities/transactional_product';
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 @Entity({ name: 'background_stats_products', schema: 'admin' })

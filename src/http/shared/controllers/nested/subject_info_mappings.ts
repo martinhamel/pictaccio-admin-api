@@ -1,5 +1,5 @@
-import { IsAlpha, IsAlphanumeric, IsString } from '@loufa/class-validator';
-import { SubjectMappings } from '@pictaccio/admin-api/types/subject_mappings';
+import { IsAlpha, IsAlphanumeric, IsString } from 'class-validator';
+import { SubjectMappings } from '../../../../types/subject_mappings';
 
 export class SubjectInfoMappings implements SubjectMappings {
     @IsString()

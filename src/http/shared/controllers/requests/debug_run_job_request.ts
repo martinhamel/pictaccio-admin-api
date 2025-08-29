@@ -1,5 +1,5 @@
-import { IsIn } from '@loufa/class-validator';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { IsIn } from 'class-validator';
+import { ConfigSchema } from '../../../../core/config_schema';
 import Container from 'typedi';
 
 const config = Container.get<ConfigSchema>('config');

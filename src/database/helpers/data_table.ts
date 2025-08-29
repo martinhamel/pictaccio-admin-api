@@ -1,26 +1,26 @@
 import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { appDataSource } from '@pictaccio/admin-api/database/data_source';
-import { getMetadata, ModelMetadata } from '@pictaccio/admin-api/database/decorators/metadata';
-import { FileNotAllowedError } from '@pictaccio/admin-api/errors/file_not_allowed_error';
-import { InvalidFormatError } from '@pictaccio/admin-api/errors/invalid_format_error';
+import { ConfigSchema } from '../../core/config_schema';
+import { logger } from '../../core/logger';
+import { httpCommonFields } from '../../core/logger_common';
+import { appDataSource } from '../../database/data_source';
+import { getMetadata, ModelMetadata } from '../../database/decorators/metadata';
+import { FileNotAllowedError } from '../../errors/file_not_allowed_error';
+import { InvalidFormatError } from '../../errors/invalid_format_error';
 import {
     DataTableCreateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
+} from '../../http/shared/controllers/requests/data_table_create_base_request';
 import {
     DataTableDeleteBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
+} from '../../http/shared/controllers/requests/data_table_delete_base_request';
 import {
     DataTableReadBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
+} from '../../http/shared/controllers/requests/data_table_read_base_request';
 import {
     DataTableUpdateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { isPromiseLike } from '@pictaccio/admin-api/utils/is_promise_like';
-import { Operator } from '@pictaccio/shared/src/types/operator';
+} from '../../http/shared/controllers/requests/data_table_update_base_request';
+import { Request } from '../../types/request';
+import { isPromiseLike } from '../../utils/is_promise_like';
+import { Operator } from '@pictaccio/shared/types/operator';
 import { extname, join } from 'path';
 import { Container } from 'typedi';
 import {

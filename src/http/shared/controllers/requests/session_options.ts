@@ -1,6 +1,6 @@
-import { IsBoolean, IsNumber, IsNumberString, IsOptional, ValidateNested } from '@loufa/class-validator';
-import { SessionColor } from '@pictaccio/admin-api/http/shared/controllers/nested/session_color';
-import { IsNullable } from '@pictaccio/admin-api/http/shared/validators/is_nullable';
+import { IsBoolean, IsNumber, IsNumberString, IsOptional, ValidateNested } from 'class-validator';
+import { SessionColor } from '../../../../http/shared/controllers/nested/session_color';
+import { IsNullable } from '../../../../http/shared/validators/is_nullable';
 import { Transform } from 'class-transformer';
 
 export class SessionOptions {

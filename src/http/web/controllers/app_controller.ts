@@ -1,12 +1,12 @@
 import { Authorized, Body, CurrentUser, Get, JsonController, Post } from '@loufa/routing-controllers';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { NotFoundError } from '@pictaccio/admin-api/errors/not_found_error';
-import { DebugRunJobRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/debug_run_job_request';
-import { DebugGetJobsResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/debug_get_jobs_response';
-import { PingResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/ping_response';
-import { DbQueriesService } from '@pictaccio/admin-api/services/db_queries_service';
-import JobsService from '@pictaccio/admin-api/services/jobs_service';
-import { User } from '@pictaccio/shared/src/types/user';
+import { ConfigSchema } from '../../../core/config_schema';
+import { NotFoundError } from '../../../errors/not_found_error';
+import { DebugRunJobRequest } from '../../../http/shared/controllers/requests/debug_run_job_request';
+import { DebugGetJobsResponse } from '../../../http/shared/controllers/responses/debug_get_jobs_response';
+import { PingResponse } from '../../../http/shared/controllers/responses/ping_response';
+import { DbQueriesService } from '../../../services/db_queries_service';
+import JobsService from '../../../services/jobs_service';
+import { User } from '@pictaccio/shared/types/user';
 import { Inject, Service } from 'typedi';
 
 @Service()

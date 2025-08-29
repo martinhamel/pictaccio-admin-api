@@ -1,6 +1,6 @@
 import { Store } from 'express-session';
 import { Inject, Service } from 'typedi';
-import { FastStoreInterface } from '@pictaccio/admin-api/core/fast_store_interface';
+import { FastStoreInterface } from '../core/fast_store_interface';
 import {
     AllCallback,
     ClearCallback,
@@ -10,9 +10,9 @@ import {
     SetCallback,
     SessionStoreInterface,
     TouchCallback
-} from '@pictaccio/admin-api/core/session_store_interface';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
+} from '../core/session_store_interface';
+import { ConfigSchema } from '../core/config_schema';
+import { logger } from '../core/logger';
 
 const PREFIX = 'pictaccio-backstore-';
 const SESSION_PROPERTY = '_pictaccio';

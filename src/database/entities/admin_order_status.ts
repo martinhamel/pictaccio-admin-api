@@ -1,5 +1,5 @@
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { OrderStatus, OrderStatuses } from '@pictaccio/shared/src/types/order_status';
+import { TransactionalOrder } from '../../database/entities/transactional_order';
+import { OrderStatus, OrderStatuses } from '@pictaccio/shared/types/order_status';
 import { BaseEntity, Column, Entity, Index, JoinColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'order_statuses', schema: 'admin' })

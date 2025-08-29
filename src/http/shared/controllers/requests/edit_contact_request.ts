@@ -1,4 +1,4 @@
-import { IsBoolean, IsEmail, IsNumberString, IsOptional, IsString } from '@loufa/class-validator';
+import { IsBoolean, IsEmail, IsNumberString, IsOptional, IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class EditContactRequest {

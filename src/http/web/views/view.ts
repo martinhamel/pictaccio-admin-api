@@ -1,7 +1,7 @@
 import { Action, ActionMetadata, BaseView } from '@loufa/routing-controllers';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { ConfigSchema } from '../../../core/config_schema';
 import { Container } from 'typedi';
-import { getFixedT } from '@pictaccio/admin-api/loaders/i18next';
+import { getFixedT } from '../../../loaders/i18next';
 
 type ScriptItem = {
     name: string, // File name of the script in the app's scripts folder

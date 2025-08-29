@@ -1,4 +1,4 @@
-import { IsString } from '@loufa/class-validator';
+import { IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class SubjectExistRequest {

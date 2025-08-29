@@ -1,58 +1,58 @@
 import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
 import { Authorized, BadRequestError, Body, CurrentUser, JsonController, Post, Req } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { TransactionalSession } from '@pictaccio/admin-api/database/entities/transactional_session';
-import { TransactionalSubject } from '@pictaccio/admin-api/database/entities/transactional_subject';
-import { TransactionalSubjectGroup } from '@pictaccio/admin-api/database/entities/transactional_subject_group';
-import { TransactionalWorkflow } from '@pictaccio/admin-api/database/entities/transactional_workflow';
+import { ConfigSchema } from '../../../core/config_schema';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { TransactionalSession } from '../../../database/entities/transactional_session';
+import { TransactionalSubject } from '../../../database/entities/transactional_subject';
+import { TransactionalSubjectGroup } from '../../../database/entities/transactional_subject_group';
+import { TransactionalWorkflow } from '../../../database/entities/transactional_workflow';
 import {
     DataTable,
     fromCreateRequest,
     fromDeleteRequest,
     fromReadRequest,
     fromUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { ExistError } from '@pictaccio/admin-api/errors/exist_error';
-import { CreateSessionRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/create_session_request';
+} from '../../../database/helpers/data_table';
+import { ExistError } from '../../../errors/exist_error';
+import { CreateSessionRequest } from '../../../http/shared/controllers/requests/create_session_request';
 import {
     DataTableCreateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
+} from '../../../http/shared/controllers/requests/data_table_create_base_request';
 import {
     DataTableDeleteBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
+} from '../../../http/shared/controllers/requests/data_table_delete_base_request';
 import {
     DataTableReadBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
+} from '../../../http/shared/controllers/requests/data_table_read_base_request';
 import {
     DataTableUpdateBaseRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { GroupUploadRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/group_upload_request';
+} from '../../../http/shared/controllers/requests/data_table_update_base_request';
+import { GroupUploadRequest } from '../../../http/shared/controllers/requests/group_upload_request';
 import {
     PhotoSessionAddVersionRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/photo_session_add_version_request';
+} from '../../../http/shared/controllers/requests/photo_session_add_version_request';
 import {
     PhotoSessionArchiveRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/photo_session_archive_request';
+} from '../../../http/shared/controllers/requests/photo_session_archive_request';
 import {
     PhotoSessionRemoveVersionRequest
-} from '@pictaccio/admin-api/http/shared/controllers/requests/photo_session_remove_version_request';
-import { SubjectUploadRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/subject_upload_request';
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
-import { CreateSessionResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/create_session_response';
-import { DataTableBaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/data_table_base_response';
-import { GroupUploadResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/group_upload_response';
+} from '../../../http/shared/controllers/requests/photo_session_remove_version_request';
+import { SubjectUploadRequest } from '../../../http/shared/controllers/requests/subject_upload_request';
+import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
+import { CreateSessionResponse } from '../../../http/shared/controllers/responses/create_session_response';
+import { DataTableBaseResponse } from '../../../http/shared/controllers/responses/data_table_base_response';
+import { GroupUploadResponse } from '../../../http/shared/controllers/responses/group_upload_response';
 import {
     PhotoSessionArchiveResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/photo_session_archive_response';
-import { SubjectUploadResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/subject_upload_response';
-import ImageService from '@pictaccio/admin-api/services/image_service';
-import { File } from '@pictaccio/admin-api/types/file';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { SubjectInfo } from '@pictaccio/admin-api/types/subject_info';
-import { User } from '@pictaccio/shared/src/types/user';
+} from '../../../http/shared/controllers/responses/photo_session_archive_response';
+import { SubjectUploadResponse } from '../../../http/shared/controllers/responses/subject_upload_response';
+import ImageService from '../../../services/image_service';
+import { File } from '../../../types/file';
+import { Request } from '../../../types/request';
+import { SubjectInfo } from '../../../types/subject_info';
+import { User } from '@pictaccio/shared/types/user';
 import { unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Inject, Service } from 'typedi';

@@ -1,5 +1,5 @@
-import { IsNotEmpty, IsIn, IsUUID } from '@loufa/class-validator';
-import { ApiResponseStatus } from '@pictaccio/shared/src/types/responses/api_response_status';
+import { IsNotEmpty, IsIn, IsUUID } from 'class-validator';
+import { ApiResponseStatus } from '@pictaccio/shared/types/responses/api_response_status';
 
 export class BaseResponse {
     @IsIn(['great-success', 'failed', 'error'])

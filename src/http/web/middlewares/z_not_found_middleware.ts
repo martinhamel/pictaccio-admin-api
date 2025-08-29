@@ -1,12 +1,12 @@
 import { Middleware, ExpressMiddlewareInterface } from '@loufa/routing-controllers';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
+import { ConfigSchema } from '../../../core/config_schema';
 import { NextFunction, Response } from 'express';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 import { Inject, Service } from 'typedi';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
+import { Request } from '../../../types/request';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
 
 /**
  * Not found middleware. Needs to be loaded last, hence the Z. This will ensure that the request is properly answered

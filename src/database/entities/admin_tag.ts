@@ -1,5 +1,5 @@
-import { AdminTagMap } from '@pictaccio/admin-api/database/entities/admin_tag_map';
-import { TagScope, TagScopes } from '@pictaccio/shared/src/types/tags';
+import { AdminTagMap } from '../../database/entities/admin_tag_map';
+import { TagScope, TagScopes } from '@pictaccio/shared/types/tags';
 import { BaseEntity, Column, Entity, Index, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity({ name: 'tags', schema: 'admin' })

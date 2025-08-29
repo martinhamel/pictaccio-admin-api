@@ -3,11 +3,11 @@ import { expect } from 'chai';
 import { authenticator } from 'otplib';
 import sinon, { createSandbox, SinonSandbox } from 'sinon'
 import { Container } from 'typedi';
-import { AdminUser } from '@pictaccio/admin-api/src/database/entities/admin_user';
-import { UserNotFoundError } from '@pictaccio/admin-api/src/errors/user_not_found_error';
-import { WrongSecretError } from '@pictaccio/admin-api/src/errors/wrong_secret_error';
-import { WrongTOTPTokenError } from '@pictaccio/admin-api/src/errors/wrong_totp_token_error';
-import { UserExistError } from '@pictaccio/admin-api/src/errors/user_exist_error';
+import { AdminUser } from '../../../src/database/entities/admin_user';
+import { UserNotFoundError } from '../../../src/errors/user_not_found_error';
+import { WrongSecretError } from '../../../src/errors/wrong_secret_error';
+import { WrongTOTPTokenError } from '../../../src/errors/wrong_totp_token_error';
+import { UserExistError } from '../../../src/errors/user_exist_error';
 import { UserStatuses } from '/app/lib/shared/src/types/user_status';
 
 const MockConfig = {
@@ -16,7 +16,7 @@ const MockConfig = {
     }
 };
 Container.set('config', MockConfig);
-import { AuthService } from '@pictaccio/admin-api/src/services/auth_service';
+import { AuthService } from '../../../src/services/auth_service';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const dummy = require('services/auth_service');
 

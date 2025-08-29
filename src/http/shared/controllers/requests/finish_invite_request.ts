@@ -1,4 +1,4 @@
-import { IsEmail, IsUUID } from '@loufa/class-validator';
+import { IsEmail, IsUUID } from 'class-validator';
 
 export class FinishInviteRequest {
     @IsUUID()

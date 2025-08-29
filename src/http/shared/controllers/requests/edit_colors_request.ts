@@ -1,5 +1,5 @@
-import { IsHexColor, IsNumber, IsString } from '@loufa/class-validator';
-import { CssStyleDescription } from '@pictaccio/shared/src/types/css_color_descriptor';
+import { IsHexColor, IsNumber, IsString } from 'class-validator';
+import { CssStyleDescription } from '@pictaccio/shared/types/css_color_descriptor';
 
 export class EditColorsRequest {
     @IsHexColor()

@@ -1,8 +1,8 @@
 import { Request as ExpressRequest } from 'express';
-import { File } from '@pictaccio/admin-api/types/file';
-import { Permission } from '@pictaccio/admin-api/types/permission';
-import { UserSession } from '@pictaccio/admin-api/types/user_session';
-import { User } from '@pictaccio/shared/src/types/user';
+import { File } from '../types/file';
+import { Permission } from '../types/permission';
+import { UserSession } from '../types/user_session';
+import { User } from '@pictaccio/shared/types/user';
 
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD' | 'CONNECT' | 'TRACE';
 

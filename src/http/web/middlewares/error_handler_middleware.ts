@@ -1,9 +1,9 @@
 import { Response, NextFunction } from 'express';
 import { ExpressErrorMiddlewareInterface, HttpError, Middleware } from '@loufa/routing-controllers';
 import { Service } from 'typedi';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { Request } from '@pictaccio/admin-api/types/request';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { Request } from '../../../types/request';
 
 /**
  * Handles errors and logs them

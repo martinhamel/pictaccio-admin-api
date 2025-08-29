@@ -16,25 +16,25 @@ import {
 import { TFunction } from 'i18next';
 import { readFile } from 'node:fs/promises';
 import { join } from 'path';
-import ImageService from '@pictaccio/admin-api/services/image_service';
+import ImageService from '../../../services/image_service';
 import { Container, Inject, Service } from 'typedi';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { TransactionalBackground } from '@pictaccio/admin-api/database/entities/transactional_background';
-import { MailerItem, MailerInterface } from '@pictaccio/admin-api/core/mailer_interface';
+import { Request } from '../../../types/request';
+import { TransactionalBackground } from '../../../database/entities/transactional_background';
+import { MailerItem, MailerInterface } from '../../../core/mailer_interface';
 import {
     DataTable,
     DataTableCreateRequest,
     DataTableDeleteRequest,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { AdminUser } from '@pictaccio/admin-api/database/entities/admin_user';
-import { DataTableReadBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_read_base_request';
-import { T } from '@pictaccio/admin-api/http/shared/decorators/t';
-import { View } from '@pictaccio/admin-api/http/web/views/view';
-import { DataTableCreateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_create_base_request';
-import { DataTableUpdateBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_update_base_request';
-import { DataTableDeleteBaseRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/data_table_delete_base_request';
+} from '../../../database/helpers/data_table';
+import { AdminUser } from '../../../database/entities/admin_user';
+import { DataTableReadBaseRequest } from '../../../http/shared/controllers/requests/data_table_read_base_request';
+import { T } from '../../../http/shared/decorators/t';
+import { View } from '../../../http/web/views/view';
+import { DataTableCreateBaseRequest } from '../../../http/shared/controllers/requests/data_table_create_base_request';
+import { DataTableUpdateBaseRequest } from '../../../http/shared/controllers/requests/data_table_update_base_request';
+import { DataTableDeleteBaseRequest } from '../../../http/shared/controllers/requests/data_table_delete_base_request';
 import { promisify } from 'util';
 
 @Service()

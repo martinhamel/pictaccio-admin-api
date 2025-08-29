@@ -1,5 +1,5 @@
-import { ValidateNested } from '@loufa/class-validator';
-import { PhotoPublish } from '@pictaccio/admin-api/http/shared/controllers/nested/photo_publish';
+import { ValidateNested } from 'class-validator';
+import { PhotoPublish } from '../../../../http/shared/controllers/nested/photo_publish';
 
 export class PublishUnpublishOrderPhotosRequest {
     @ValidateNested({ each: true })

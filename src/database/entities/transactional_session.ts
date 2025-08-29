@@ -1,18 +1,18 @@
-import { AllowOnWire } from '@pictaccio/admin-api/database/decorators/allow_on_wire';
+import { AllowOnWire } from '../../database/decorators/allow_on_wire';
 import {
     TransactionalDeliveryOptionGroup
-} from '@pictaccio/admin-api/database/entities/transactional_delivery_option_group';
-import { TransactionalProductCatalog } from '@pictaccio/admin-api/database/entities/transactional_product_catalog';
-import { TransactionalProductCrosssell } from '@pictaccio/admin-api/database/entities/transactional_product_crosssell';
-import { TransactionalWorkflow } from '@pictaccio/admin-api/database/entities/transactional_workflow';
+} from '../../database/entities/transactional_delivery_option_group';
+import { TransactionalProductCatalog } from '../../database/entities/transactional_product_catalog';
+import { TransactionalProductCrosssell } from '../../database/entities/transactional_product_crosssell';
+import { TransactionalWorkflow } from '../../database/entities/transactional_workflow';
 import {
     DataTableEntityMethods,
     DataTableReadRequest,
     DataTableUpdateRequest
-} from '@pictaccio/admin-api/database/helpers/data_table';
-import { SessionInfo } from '@pictaccio/shared/src/types/session_info';
-import { SessionOptions } from '@pictaccio/shared/src/types/session_options';
-import { StaticImplements } from '@pictaccio/shared/src/types/static_implements';
+} from '../../database/helpers/data_table';
+import { SessionInfo } from '@pictaccio/shared/types/session_info';
+import { SessionOptions } from '@pictaccio/shared/types/session_options';
+import { StaticImplements } from '@pictaccio/shared/types/static_implements';
 import {
     BaseEntity,
     Column,

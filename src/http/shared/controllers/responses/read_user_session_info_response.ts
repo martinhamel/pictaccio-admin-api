@@ -1,5 +1,5 @@
-import { BaseResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/base_response';
-import { User } from '@pictaccio/shared/src/types/user';
+import { BaseResponse } from '../../../../http/shared/controllers/responses/base_response';
+import { User } from '@pictaccio/shared/types/user';
 
 export class ReadUserSessionInfoResponse extends BaseResponse {
     info?: User;

@@ -10,25 +10,25 @@ import {
     UnauthorizedError
 } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { logger } from '@pictaccio/admin-api/core/logger';
-import { httpCommonFields } from '@pictaccio/admin-api/core/logger_common';
-import { ArchiveUserRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/archive_user_request';
-import { DeleteUserRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/delete_user_request';
-import { EditUserRequest } from '@pictaccio/admin-api/http/shared/controllers/requests/edit_user_request';
+import { ConfigSchema } from '../../../core/config_schema';
+import { logger } from '../../../core/logger';
+import { httpCommonFields } from '../../../core/logger_common';
+import { ArchiveUserRequest } from '../../../http/shared/controllers/requests/archive_user_request';
+import { DeleteUserRequest } from '../../../http/shared/controllers/requests/delete_user_request';
+import { EditUserRequest } from '../../../http/shared/controllers/requests/edit_user_request';
 import {
     ArchiveAccountResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/archive_account_response';
-import { DeleteUserResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/delete_user_response';
-import { EditUserResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/edit_user_response';
-import { UserListResponse } from '@pictaccio/admin-api/http/shared/controllers/responses/user_list_response';
+} from '../../../http/shared/controllers/responses/archive_account_response';
+import { DeleteUserResponse } from '../../../http/shared/controllers/responses/delete_user_response';
+import { EditUserResponse } from '../../../http/shared/controllers/responses/edit_user_response';
+import { UserListResponse } from '../../../http/shared/controllers/responses/user_list_response';
 import {
     UserPermissionResponse
-} from '@pictaccio/admin-api/http/shared/controllers/responses/user_permission_response';
-import { RbacService } from '@pictaccio/admin-api/services/rbac_service';
-import { UserService } from '@pictaccio/admin-api/services/user_service';
-import { Request } from '@pictaccio/admin-api/types/request';
-import { User } from '@pictaccio/shared/src/types/user';
+} from '../../../http/shared/controllers/responses/user_permission_response';
+import { RbacService } from '../../../services/rbac_service';
+import { UserService } from '../../../services/user_service';
+import { Request } from '../../../types/request';
+import { User } from '@pictaccio/shared/types/user';
 import { Inject, Service } from 'typedi';
 
 @Service()

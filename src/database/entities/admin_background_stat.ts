@@ -1,6 +1,6 @@
-import { TransactionalBackground } from '@pictaccio/admin-api/database/entities/transactional_background';
-import { TransactionalOrder } from '@pictaccio/admin-api/database/entities/transactional_order';
-import { TransactionalProduct } from '@pictaccio/admin-api/database/entities/transactional_product';
+import { TransactionalBackground } from './transactional_background';
+import { TransactionalOrder } from './transactional_order';
+import { TransactionalProduct } from './transactional_product';
 import {
     AfterLoad,
     BaseEntity, BeforeInsert, BeforeUpdate,

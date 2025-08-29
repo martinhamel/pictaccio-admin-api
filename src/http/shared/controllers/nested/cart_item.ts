@@ -1,8 +1,8 @@
-import { IsIn, IsNumber, IsString, ValidateNested } from '@loufa/class-validator';
-import { LocalizedString } from '@pictaccio/admin-api/http/shared/controllers/nested/localized_string';
-import { ProductPhoto } from '@pictaccio/admin-api/http/shared/controllers/nested/product_photo';
-import { ProductType, ProductTypes } from '@pictaccio/shared/src/types/product_type';
-import { VirtualProduct } from '@pictaccio/shared/src/types/virtual_product';
+import { IsIn, IsNumber, IsString, ValidateNested } from 'class-validator';
+import { LocalizedString } from '../../../../http/shared/controllers/nested/localized_string';
+import { ProductPhoto } from '../../../../http/shared/controllers/nested/product_photo';
+import { ProductType, ProductTypes } from '@pictaccio/shared/types/product_type';
+import { VirtualProduct } from '@pictaccio/shared/types/virtual_product';
 
 export class CartItem {
     @IsIn(ProductTypes)

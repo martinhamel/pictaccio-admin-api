@@ -1,8 +1,8 @@
-import { IsAlpha, IsEmail, ValidateNested } from '@loufa/class-validator';
-import { ArrayIncludes } from '@pictaccio/admin-api/http/shared/validators/array_includes';
+import { IsAlpha, IsEmail, ValidateNested } from 'class-validator';
+import { ArrayIncludes } from '../../../../http/shared/validators/array_includes';
 import { Container } from 'typedi';
-import { ConfigSchema } from '@pictaccio/admin-api/core/config_schema';
-import { UserName } from '@pictaccio/shared/src/types/user_name';
+import { ConfigSchema } from '../../../../core/config_schema';
+import { UserName } from '@pictaccio/shared/types/user_name';
 
 const config = Container.get<ConfigSchema>('config');
 
