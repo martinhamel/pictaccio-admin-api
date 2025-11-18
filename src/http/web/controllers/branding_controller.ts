@@ -7,7 +7,7 @@ import { EditColorsRequest } from '../../../http/shared/controllers/requests/edi
 import { BaseResponse } from '../../../http/shared/controllers/responses/base_response';
 import { ColorsReadResponse } from '../../../http/shared/controllers/responses/colors_read_response';
 import { Response } from 'express';
-import { checkFileMimeType } from '@loufa/loufairy-server/src/entry';
+import { checkFileMimeType } from '../../../utils/checkFileMimeType';
 import { Inject, Service } from 'typedi';
 import { logger } from '../../../core/logger';
 import { httpCommonFields } from '../../../core/logger_common';
@@ -151,11 +151,9 @@ export class BrandingController {
             };
         }
 
-        const imageMimeType = process.platform === 'win32'
-            ? 'image/png'
-            : await checkFileMimeType(request.files['logo-image']['data']);
+        const imageMimeType = await checkFileMimeType(request.files['logo-image']['data']);
         if (!['image/png'].includes(imageMimeType)) {
-            logger.error(`User ${user.email} tried to set the logo image but the file was not a PNG image`, {
+            logger.error(`User ${user.email} tried to set the logo image but the file was not a PNG image: ${imageMimeType}`, {
                 detected_mime_type: imageMimeType,
                 src_email: user.email,
                 ...httpCommonFields(request)

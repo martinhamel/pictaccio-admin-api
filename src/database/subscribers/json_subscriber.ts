@@ -1,7 +1,9 @@
 import { EntitySubscriberInterface, EventSubscriber, InsertEvent, UpdateEvent } from 'typeorm';
 import { objectPropertiesIterator } from '@loufa/loufairy';
 import { EntityMetadata } from 'typeorm/metadata/EntityMetadata';
+import { Service } from 'typedi';
 
+@Service()
 @EventSubscriber()
 export class JsonSubscriber implements EntitySubscriberInterface<any> {
     public afterLoad(entity: any): void {

@@ -1,5 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
+import { Service } from "typedi";
 
+@Service()
 export class Migrations1751120367178 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {

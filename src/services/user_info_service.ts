@@ -1,4 +1,5 @@
-import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
+import { getUniqueFilename } from '@loufa/loufairy-server';
+import { checkFileMimeType } from '../utils/checkFileMimeType';
 import { extname, join } from 'path';
 import { Container, Inject, Service } from 'typedi';
 import { ConfigSchema } from '../core/config_schema';

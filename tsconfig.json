@@ -25,6 +25,9 @@
     "rootDir": ".",
     "outDir": "dist",
     "paths": {
+      "@pictaccio/shared": [
+        "node_modules/@pictaccio/shared/dist/src/index.js"
+      ],
       "@pictaccio/shared/*": [
         "node_modules/@pictaccio/shared/dist/src/*"
       ],
@@ -35,7 +38,7 @@
         "node_modules/@loufa/loufairy/dist/src/entry.js"
       ],
       "@loufa/loufairy-server": [
-        "node_modules/@loufa/loufairy-server/dist/entry.d.ts"
+        "node_modules/@loufa/loufairy-server/dist/entry.js"
       ],
       "@pictaccio/grpc-service-contracts/*": [
         "node_modules/@pictaccio/grpc-service-contracts/dist/lib/grpc-service-contracts/src/image-service/*",

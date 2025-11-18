@@ -1,5 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
+import { Service } from "typedi";
 
+@Service()
 export class Compilation24101730116674387 implements MigrationInterface {
     name = 'Compilation24101730116674387';
 
@@ -10,6 +12,9 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS timescaledb;`);
         // Manual query end
 
+        await queryRunner.query(`CREATE SCHEMA IF NOT EXISTS transactional;`);
+        await queryRunner.query(`CREATE SCHEMA IF NOT EXISTS admin;`);
+        await queryRunner.query(`CREATE ROLE pictaccio_transactional WITH LOGIN PASSWORD 'password';GRANT CONNECT ON DATABASE "pictaccio" TO pictaccio_transactional;`);
         await queryRunner.query(`CREATE TABLE "transactional"."workflows" ("id" BIGSERIAL NOT NULL, "internal_name" text NOT NULL, "options" jsonb NOT NULL, CONSTRAINT "workflows_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE UNIQUE INDEX "workflows_internal_name_idx" ON "transactional"."workflows" ("internal_name") `);
         await queryRunner.query(`CREATE TYPE "admin"."users_status_enum" AS ENUM('ghost', 'invited', 'created', 'enabled', 'disabled', 'archived')`);
@@ -53,7 +58,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE INDEX "sessions_archived_idx" ON "transactional"."sessions" ("archived") `);
         await queryRunner.query(`CREATE INDEX "sessions_expire_date_idx" ON "transactional"."sessions" ("expire_date") `);
         await queryRunner.query(`CREATE INDEX "sessions_publish_date_idx" ON "transactional"."sessions" ("publish_date") `);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","transactional","subjects","GENERATED_COLUMN","display_name","COALESCE(NULLIF(COALESCE((info->>'firstName')::text, '') || CASE WHEN (info->>'firstName') IS NOT NULL AND (info->>'lastName') IS NOT NULL THEN ' ' ELSE '' END || COALESCE((info->>'lastName')::text, ''), ''), '--')"]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "transactional", "subjects", "GENERATED_COLUMN", "display_name", "COALESCE(NULLIF(COALESCE((info->>'firstName')::text, '') || CASE WHEN (info->>'firstName') IS NOT NULL AND (info->>'lastName') IS NOT NULL THEN ' ' ELSE '' END || COALESCE((info->>'lastName')::text, ''), ''), '--')"]);
         await queryRunner.query(`CREATE TABLE "transactional"."subjects" ("id" BIGSERIAL NOT NULL, "code" text NOT NULL, "display_name" text GENERATED ALWAYS AS (COALESCE(NULLIF(COALESCE((info->>'firstName')::text, '') || CASE WHEN (info->>'firstName') IS NOT NULL AND (info->>'lastName') IS NOT NULL THEN ' ' ELSE '' END || COALESCE((info->>'lastName')::text, ''), ''), '--')) STORED NOT NULL, "group" text, "info" jsonb NOT NULL, "mappings" jsonb NOT NULL, "photos" jsonb NOT NULL, "search_name" text, "unique_id" text NOT NULL, "versions" jsonb, "session_id" bigint NOT NULL, CONSTRAINT "subjects_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE INDEX "subjects_code_idx" ON "transactional"."subjects" ("code") `);
         await queryRunner.query(`CREATE INDEX "subjects_group_idx" ON "transactional"."subjects" ("group") `);
@@ -63,8 +68,8 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE TABLE "admin"."order_comments" ("id" SERIAL NOT NULL, "message" text NOT NULL, "edited" boolean NOT NULL, "created_on" TIMESTAMP NOT NULL DEFAULT now(), "updated_on" TIMESTAMP NOT NULL DEFAULT now(), "order_id" bigint, "user_id" uuid, CONSTRAINT "comments_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TYPE "admin"."order_statuses_status_enum" AS ENUM('pending', 'photo-processing', 'ready-to-print', 'printing-packaging', 'ready-to-ship', 'completed', 'correction-requested', 'cancelled')`);
         await queryRunner.query(`CREATE TABLE "admin"."order_statuses" ("id" SERIAL NOT NULL, "status" "admin"."order_statuses_status_enum" NOT NULL DEFAULT 'pending', "order_id" bigint, CONSTRAINT "REL_3ea5b2fdf48f16b209b65e7381" UNIQUE ("order_id"), CONSTRAINT "order_statuses_id_pkey" PRIMARY KEY ("id"))`);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","transactional","contacts","GENERATED_COLUMN","name","first_name || ' ' || last_name"]);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","transactional","contacts","GENERATED_COLUMN","phone_digits","regexp_replace(phone, '[^\\\\d]+', '', 'g')"]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "transactional", "contacts", "GENERATED_COLUMN", "name", "first_name || ' ' || last_name"]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "transactional", "contacts", "GENERATED_COLUMN", "phone_digits", "regexp_replace(phone, '[^\\\\d]+', '', 'g')"]);
         await queryRunner.query(`CREATE TABLE "transactional"."contacts" ("id" BIGSERIAL NOT NULL, "first_name" text NOT NULL, "last_name" text NOT NULL, "name" text GENERATED ALWAYS AS (first_name || ' ' || last_name) STORED NOT NULL, "email" text NOT NULL, "phone" text NOT NULL, "phone_digits" text GENERATED ALWAYS AS (regexp_replace(phone, '[^\\d]+', '', 'g')) STORED NOT NULL, "search_name" text, "street_address_1" text NOT NULL, "street_address_2" text, "postal_code" text NOT NULL, "city" text NOT NULL, "region" text NOT NULL, "country" text NOT NULL, "newsletter" boolean NOT NULL, CONSTRAINT "contacts_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE INDEX "contacts_name_idx" ON "transactional"."contacts" ("name") `);
         await queryRunner.query(`CREATE INDEX "contacts_email_idx" ON "transactional"."contacts" ("email") `);
@@ -87,7 +92,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE INDEX "order_published_photos_token_idx" ON "transactional"."order_published_photos" ("token") `);
         await queryRunner.query(`CREATE TABLE "transactional"."background_categories" ("id" BIGSERIAL NOT NULL, "name_locale" jsonb NOT NULL, "priority" integer NOT NULL DEFAULT '0', CONSTRAINT "background_categories_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TYPE "public"."app_integrations_app_enum" AS ENUM('canada-post', 'elavon', 'stripe', 'chase', 'paypal')`);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","public","app_integrations","GENERATED_COLUMN","active","(configuration->>'active')::boolean"]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "public", "app_integrations", "GENERATED_COLUMN", "active", "(configuration->>'active')::boolean"]);
         await queryRunner.query(`CREATE TABLE "app_integrations" ("app" "public"."app_integrations_app_enum" NOT NULL, "active" boolean GENERATED ALWAYS AS ((configuration->>'active')::boolean) STORED NOT NULL, "configuration" jsonb NOT NULL, CONSTRAINT "app_integrations_app_pkey" PRIMARY KEY ("app"))`);
         await queryRunner.query(`CREATE INDEX "app_integrations_active_idx" ON "app_integrations" ("active") `);
         await queryRunner.query(`CREATE TABLE "store_config" ("key" text NOT NULL, "value" text NOT NULL, CONSTRAINT "store_config_key_pkey" PRIMARY KEY ("key"))`);
@@ -98,7 +103,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE TYPE "public"."app_states_key_enum" AS ENUM('lastBackgroundStatsOrderUpdateTimestamp', 'lastBackgroundStatsProcessedOrderId', 'lastSalesStatsOrderUpdateTimestamp', 'lastSalesStatsProcessedOrderId')`);
         await queryRunner.query(`CREATE TABLE "app_states" ("key" "public"."app_states_key_enum" NOT NULL, "value" jsonb NOT NULL, CONSTRAINT "app_states_key_pkey" PRIMARY KEY ("key"))`);
         await queryRunner.query(`CREATE TABLE "admin"."sales_stats" ("date" bigint NOT NULL, "order_id" bigint NOT NULL, "number_of_subjects" integer NOT NULL, "subtotal" numeric NOT NULL, "shipping" numeric NOT NULL, "promo_rebate" numeric NOT NULL, "taxes" numeric NOT NULL, "returns" numeric NOT NULL, "return_fees" numeric NOT NULL, "total" numeric NOT NULL, "session_id" bigint, CONSTRAINT "sales_stats_order_id_date_pkey" PRIMARY KEY ("date", "order_id"))`);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","admin","sales_stats_products","GENERATED_COLUMN","product_id","\n        CASE \n            WHEN sales_stats_product_id ~ '^[0-9]+$' THEN sales_stats_product_id::bigint \n            ELSE NULL \n        END\n        "]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "admin", "sales_stats_products", "GENERATED_COLUMN", "product_id", "\n        CASE \n            WHEN sales_stats_product_id ~ '^[0-9]+$' THEN sales_stats_product_id::bigint \n            ELSE NULL \n        END\n        "]);
         await queryRunner.query(`CREATE TABLE "admin"."sales_stats_products" ("sales_stats_date" bigint NOT NULL, "sales_stats_order_id" bigint NOT NULL, "sales_stats_product_id" text NOT NULL, "quantity" integer NOT NULL, "product_id" bigint GENERATED ALWAYS AS (
         CASE 
             WHEN sales_stats_product_id ~ '^[0-9]+$' THEN sales_stats_product_id::bigint 
@@ -110,7 +115,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`CREATE INDEX "reset_requests_created_on_idx" ON "admin"."reset_requests" ("created_on") `);
         await queryRunner.query(`CREATE TABLE "admin"."user_invites" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "email" text NOT NULL, "user_id" text NOT NULL, "created_on" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "user_invites_id_pkey" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "admin"."background_stats" ("date" bigint NOT NULL, "background_id" bigint NOT NULL, "conversion_count" integer NOT NULL, "usage_count" integer NOT NULL, CONSTRAINT "background_stats_id_date_pkey" PRIMARY KEY ("date", "background_id"))`);
-        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093","admin","background_stats_products","GENERATED_COLUMN","product_id","\n        CASE \n            WHEN background_stats_product_id ~ '^[0-9]+$' THEN background_stats_product_id::bigint \n            ELSE NULL \n        END\n        "]);
+        await queryRunner.query(`INSERT INTO "public"."typeorm_metadata"("database", "schema", "table", "type", "name", "value") VALUES ($1, $2, $3, $4, $5, $6)`, ["pictaccio_db3093", "admin", "background_stats_products", "GENERATED_COLUMN", "product_id", "\n        CASE \n            WHEN background_stats_product_id ~ '^[0-9]+$' THEN background_stats_product_id::bigint \n            ELSE NULL \n        END\n        "]);
         await queryRunner.query(`CREATE TABLE "admin"."background_stats_products" ("background_stats_date" bigint NOT NULL, "background_stats_background_id" bigint NOT NULL, "background_stats_product_id" text NOT NULL, "product_id" bigint GENERATED ALWAYS AS (
         CASE 
             WHEN background_stats_product_id ~ '^[0-9]+$' THEN background_stats_product_id::bigint 
@@ -337,14 +342,14 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`DROP INDEX "transactional"."IDX_87bba13d85cde654dbe40156ce"`);
         await queryRunner.query(`DROP TABLE "transactional"."delivery_option_groups_delivery_options_map"`);
         await queryRunner.query(`DROP TABLE "admin"."background_stats_products"`);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","product_id","pictaccio_db3093","admin","background_stats_products"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "product_id", "pictaccio_db3093", "admin", "background_stats_products"]);
         await queryRunner.query(`DROP TABLE "admin"."background_stats"`);
         await queryRunner.query(`DROP TABLE "admin"."user_invites"`);
         await queryRunner.query(`DROP INDEX "admin"."reset_requests_created_on_idx"`);
         await queryRunner.query(`DROP INDEX "admin"."reset_requests_email_key"`);
         await queryRunner.query(`DROP TABLE "admin"."reset_requests"`);
         await queryRunner.query(`DROP TABLE "admin"."sales_stats_products"`);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","product_id","pictaccio_db3093","admin","sales_stats_products"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "product_id", "pictaccio_db3093", "admin", "sales_stats_products"]);
         await queryRunner.query(`DROP TABLE "admin"."sales_stats"`);
         await queryRunner.query(`DROP TABLE "app_states"`);
         await queryRunner.query(`DROP TYPE "public"."app_states_key_enum"`);
@@ -355,7 +360,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "store_config"`);
         await queryRunner.query(`DROP INDEX "public"."app_integrations_active_idx"`);
         await queryRunner.query(`DROP TABLE "app_integrations"`);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","active","pictaccio_db3093","public","app_integrations"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "active", "pictaccio_db3093", "public", "app_integrations"]);
         await queryRunner.query(`DROP TYPE "public"."app_integrations_app_enum"`);
         await queryRunner.query(`DROP TABLE "transactional"."background_categories"`);
         await queryRunner.query(`DROP INDEX "transactional"."order_published_photos_token_idx"`);
@@ -378,8 +383,8 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`DROP INDEX "transactional"."contacts_email_idx"`);
         await queryRunner.query(`DROP INDEX "transactional"."contacts_name_idx"`);
         await queryRunner.query(`DROP TABLE "transactional"."contacts"`);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","phone_digits","pictaccio_db3093","transactional","contacts"]);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","name","pictaccio_db3093","transactional","contacts"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "phone_digits", "pictaccio_db3093", "transactional", "contacts"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "name", "pictaccio_db3093", "transactional", "contacts"]);
         await queryRunner.query(`DROP TABLE "admin"."order_statuses"`);
         await queryRunner.query(`DROP TYPE "admin"."order_statuses_status_enum"`);
         await queryRunner.query(`DROP TABLE "admin"."order_comments"`);
@@ -389,7 +394,7 @@ export class Compilation24101730116674387 implements MigrationInterface {
         await queryRunner.query(`DROP INDEX "transactional"."subjects_group_idx"`);
         await queryRunner.query(`DROP INDEX "transactional"."subjects_code_idx"`);
         await queryRunner.query(`DROP TABLE "transactional"."subjects"`);
-        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN","display_name","pictaccio_db3093","transactional","subjects"]);
+        await queryRunner.query(`DELETE FROM "public"."typeorm_metadata" WHERE "type" = $1 AND "name" = $2 AND "database" = $3 AND "schema" = $4 AND "table" = $5`, ["GENERATED_COLUMN", "display_name", "pictaccio_db3093", "transactional", "subjects"]);
         await queryRunner.query(`DROP INDEX "transactional"."sessions_publish_date_idx"`);
         await queryRunner.query(`DROP INDEX "transactional"."sessions_expire_date_idx"`);
         await queryRunner.query(`DROP INDEX "transactional"."sessions_archived_idx"`);

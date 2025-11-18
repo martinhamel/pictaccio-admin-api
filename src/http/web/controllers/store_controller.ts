@@ -1,4 +1,3 @@
-import { checkFileMimeType } from '@loufa/loufairy-server/src/entry';
 import {
     Authorized,
     BadRequestError,
@@ -11,6 +10,7 @@ import {
     Req,
     Res
 } from '@loufa/routing-controllers';
+import { checkFileMimeType } from '../../../utils/checkFileMimeType';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
 import { config } from '../../../config';
 import { ConfigSchema } from '../../../core/config_schema';
@@ -439,7 +439,7 @@ export class StoreController {
             ? 'image/png'
             : await checkFileMimeType(request.files['watermark-image']['data']);
         if (!['image/png'].includes(imageMimeType)) {
-            logger.error(`User ${user.email} tried to set the watermark image but the file was not a PNG image`, {
+            logger.error(`User ${user.email} tried to set the watermark image but the file was not a PNG image: ${imageMimeType}`, {
                 detected_mime_type: imageMimeType,
                 src_email: user.email,
                 ...httpCommonFields(request)

@@ -1,5 +1,5 @@
 import { ChannelCredentials, Metadata } from '@grpc/grpc-js';
-import { wrapGrpcClient, WrappedGrpcClient } from '@loufa/loufairy-server/src/entry';
+import { wrapGrpcClient, WrappedGrpcClient } from '@loufa/loufairy-server';
 import { ConfigSchema } from '../core/config_schema';
 import { logger } from '../core/logger';
 import JobsService from '../services/jobs_service';

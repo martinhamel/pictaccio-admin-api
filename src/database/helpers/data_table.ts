@@ -1,4 +1,5 @@
-import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
+import { getUniqueFilename } from '@loufa/loufairy-server';
+import { checkFileMimeType } from '../../utils/checkFileMimeType';
 import { ConfigSchema } from '../../core/config_schema';
 import { logger } from '../../core/logger';
 import { httpCommonFields } from '../../core/logger_common';

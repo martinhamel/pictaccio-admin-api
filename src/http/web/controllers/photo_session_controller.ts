@@ -1,4 +1,5 @@
-import { checkFileMimeType, getUniqueFilename } from '@loufa/loufairy-server/src/entry';
+import { getUniqueFilename } from '@loufa/loufairy-server';
+import { checkFileMimeType } from '../../../utils/checkFileMimeType';
 import { Authorized, BadRequestError, Body, CurrentUser, JsonController, Post, Req } from '@loufa/routing-controllers';
 import { ResponseSchema } from '@loufa/routing-controllers-openapi';
 import { ConfigSchema } from '../../../core/config_schema';
